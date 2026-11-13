@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /// <summary>
-/// Runs one conversation at a time and draws a simple dialogue box (IMGUI, no scene UI needed).
-/// Advance with E / Space / Enter, or click / tap anywhere. Lines that are multiple-choice questions
+/// Runs one conversation at a time and drives the dialogue panel on the game's Canvas (see the GameUI prefab).
+/// Advance with E / Space / Enter, or click / tap the panel. Lines that are multiple-choice questions
 /// show answer buttons (tap, click, or press 1-9) and only continue after the right answer.
-/// Created automatically the first time an NPC needs it.
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
@@ -18,18 +19,30 @@ public class DialogueManager : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = FindAnyObjectByType<DialogueManager>();
+                instance = FindAnyObjectByType<DialogueManager>(FindObjectsInactive.Include);
                 if (instance == null)
-                    instance = new GameObject("DialogueManager").AddComponent<DialogueManager>();
+                    Debug.LogError("No DialogueManager in the scene. Add the GameUI prefab (Assets/Prefabs/GameUI).");
             }
             return instance;
         }
     }
 
+    [Header("UI (set up in the GameUI prefab)")]
+    [SerializeField] GameObject panel;
+    [SerializeField] Button panelButton;
+    [SerializeField] TMP_Text speakerText;
+    [SerializeField] TMP_Text bodyText;
+    [SerializeField] TMP_Text hintText;
+    [SerializeField] GameObject choiceContainer;
+    [SerializeField] Button[] choiceButtons;
+
+    [SerializeField] Color hintColor = new Color(1f, 1f, 1f, 0.6f);
+    [SerializeField] Color wrongColor = new Color(1f, 0.7f, 0.3f);
+
     DialogueData current;
     int index;
+    int startFrame;
     System.Action onEnd;
-    GUIStyle boxStyle, nameStyle, textStyle, hintStyle, choiceStyle;
 
     // Question state
     readonly HashSet<int> wrongPicks = new();
@@ -37,11 +50,20 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsActive => current != null;
 
-    /// <summary>UI scale so text stays readable on phone-sized, high-res screens.</summary>
-    public static float UIScale => Mathf.Max(1f, Screen.height / 720f);
-
     DialogueLine CurrentLine => current.lines[index];
     bool ShowingQuestion => praiseText == null && CurrentLine.IsQuestion;
+
+    void Awake()
+    {
+        instance = this;
+        panel.SetActive(false);
+        panelButton.onClick.AddListener(OnPanelClicked);
+        for (int i = 0; i < choiceButtons.Length; i++)
+        {
+            int choice = i;
+            choiceButtons[i].onClick.AddListener(() => Pick(choice));
+        }
+    }
 
     public void StartDialogue(DialogueData data, System.Action onFinished)
     {
@@ -49,56 +71,60 @@ public class DialogueManager : MonoBehaviour
         current = data;
         index = 0;
         onEnd = onFinished;
-        ResetQuestionState();
-    }
-
-    void ResetQuestionState()
-    {
         wrongPicks.Clear();
         praiseText = null;
+        startFrame = Time.frameCount;   // ignore the key press that opened the conversation
+        panel.SetActive(true);
+        Refresh();
     }
 
     void Update()
     {
-        if (!IsActive) return;
+        if (!IsActive || Time.frameCount == startFrame) return;
 
         var kb = Keyboard.current;
+        if (kb == null) return;
 
         if (ShowingQuestion)
         {
             // Number keys pick an answer (1 = first choice).
-            if (kb != null)
-            {
-                var choices = CurrentLine.choices;
-                for (int i = 0; i < choices.Length && i < 9; i++)
-                    if (kb[Key.Digit1 + i].wasPressedThisFrame) Pick(i);
-            }
-            return;
+            var choices = CurrentLine.choices;
+            for (int i = 0; i < choices.Length && i < 9; i++)
+                if (kb[Key.Digit1 + i].wasPressedThisFrame) Pick(i);
         }
+        else if (kb.eKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame || kb.enterKey.wasPressedThisFrame)
+        {
+            Next();
+        }
+    }
 
-        // Pointer covers both mouse and touchscreen taps.
-        var pointer = Pointer.current;
-        bool advance = (kb != null && (kb.eKey.wasPressedThisFrame || kb.spaceKey.wasPressedThisFrame || kb.enterKey.wasPressedThisFrame))
-                       || (pointer != null && pointer.press.wasPressedThisFrame);
-        if (advance) Next();
+    void OnPanelClicked()
+    {
+        if (IsActive && !ShowingQuestion) Next();
     }
 
     void Pick(int choice)
     {
-        if (!ShowingQuestion || wrongPicks.Contains(choice)) return;
+        if (!IsActive || !ShowingQuestion || wrongPicks.Contains(choice)) return;
 
         var line = CurrentLine;
         if (choice == line.correctIndex)
         {
             wrongPicks.Clear();
             if (!string.IsNullOrEmpty(line.correctText))
+            {
                 praiseText = line.correctText;   // shown next; reader taps to continue
+                Refresh();
+            }
             else
+            {
                 Next();
+            }
         }
         else
         {
             wrongPicks.Add(choice);
+            Refresh();
         }
     }
 
@@ -110,82 +136,48 @@ public class DialogueManager : MonoBehaviour
         if (index >= current.lines.Length)
         {
             current = null;
+            panel.SetActive(false);
             var cb = onEnd;
             onEnd = null;
             cb?.Invoke();
+            return;
         }
+        Refresh();
     }
 
-    void OnGUI()
+    // Updates the panel to match the current line / question state.
+    void Refresh()
     {
-        if (!IsActive) return;
-        BuildStyles();
-
-        float s = UIScale;
-        nameStyle.fontSize = Mathf.RoundToInt(22 * s);
-        textStyle.fontSize = Mathf.RoundToInt(20 * s);
-        hintStyle.fontSize = Mathf.RoundToInt(14 * s);
-        choiceStyle.fontSize = Mathf.RoundToInt(20 * s);
-
         var line = CurrentLine;
         bool question = ShowingQuestion;
-        string speaker = string.IsNullOrEmpty(line.speaker) ? current.npcName : line.speaker;
-        string body = praiseText ?? line.text;
 
-        float w = Screen.width * 0.8f;
-        float h = question ? Screen.height * 0.55f : Screen.height * 0.3f;
-        var rect = new Rect((Screen.width - w) / 2f, Screen.height - h - 20f * s, w, h);
-        GUI.Box(rect, GUIContent.none, boxStyle);
+        speakerText.text = string.IsNullOrEmpty(line.speaker) ? current.npcName : line.speaker;
+        bodyText.text = praiseText ?? line.text;
 
-        float pad = 20f * s;
-        GUI.Label(new Rect(rect.x + pad, rect.y + 10f * s, rect.width - pad * 2, 32f * s), speaker, nameStyle);
-
+        choiceContainer.SetActive(question);
         if (question)
         {
-            float textH = 90f * s;
-            GUI.Label(new Rect(rect.x + pad, rect.y + 48f * s, rect.width - pad * 2, textH), body, textStyle);
-
-            float btnH = 46f * s, gap = 8f * s;
-            float y = rect.y + 48f * s + textH + 4f * s;
-            for (int i = 0; i < line.choices.Length; i++)
+            for (int i = 0; i < choiceButtons.Length; i++)
             {
-                GUI.enabled = !wrongPicks.Contains(i);
-                if (GUI.Button(new Rect(rect.x + pad, y, rect.width - pad * 2, btnH), $"{i + 1}.  {line.choices[i]}", choiceStyle))
-                    Pick(i);
-                y += btnH + gap;
+                bool used = i < line.choices.Length;
+                choiceButtons[i].gameObject.SetActive(used);
+                if (!used) continue;
+                choiceButtons[i].interactable = !wrongPicks.Contains(i);
+                choiceButtons[i].GetComponentInChildren<TMP_Text>().text = $"{i + 1}.  {line.choices[i]}";
             }
-            GUI.enabled = true;
 
-            if (wrongPicks.Count > 0)
-            {
-                string hint = string.IsNullOrEmpty(line.hint) ? "Not quite. Try again!" : line.hint;
-                hintStyle.normal.textColor = new Color(1f, 0.7f, 0.3f);
-                GUI.Label(new Rect(rect.x + pad, rect.yMax - 30f * s, rect.width - pad * 2, 24f * s), hint, hintStyle);
-                hintStyle.normal.textColor = new Color(1f, 1f, 1f, 0.6f);
-            }
+            bool wrong = wrongPicks.Count > 0;
+            hintText.color = wrong ? wrongColor : hintColor;
+            hintText.text = wrong
+                ? (string.IsNullOrEmpty(line.hint) ? "Not quite. Try again!" : line.hint)
+                : "Pick the answer you think is right";
         }
         else
         {
-            GUI.Label(new Rect(rect.x + pad, rect.y + 48f * s, rect.width - pad * 2, rect.height - 84f * s), body, textStyle);
-
             bool last = praiseText == null && index >= current.lines.Length - 1;
             bool touch = Touchscreen.current != null && Keyboard.current == null;
-            string key = touch ? "Tap" : "[E] / click";
-            GUI.Label(new Rect(rect.x + pad, rect.yMax - 30f * s, rect.width - pad * 2, 24f * s),
-                $"{key} to {(last ? "close" : "continue")}", hintStyle);
+            hintText.color = hintColor;
+            hintText.text = $"{(touch ? "Tap" : "[E] / click")} to {(last ? "close" : "continue")}";
         }
-    }
-
-    void BuildStyles()
-    {
-        if (boxStyle != null) return;
-        var tex = new Texture2D(1, 1);
-        tex.SetPixel(0, 0, new Color(0f, 0f, 0f, 0.8f));
-        tex.Apply();
-        boxStyle = new GUIStyle(GUI.skin.box) { normal = { background = tex } };
-        nameStyle = new GUIStyle(GUI.skin.label) { fontStyle = FontStyle.Bold, normal = { textColor = new Color(1f, 0.85f, 0.4f) } };
-        textStyle = new GUIStyle(GUI.skin.label) { wordWrap = true, richText = true, normal = { textColor = Color.white } };
-        hintStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleRight, normal = { textColor = new Color(1f, 1f, 1f, 0.6f) } };
-        choiceStyle = new GUIStyle(GUI.skin.button) { alignment = TextAnchor.MiddleLeft, richText = true };
     }
 }

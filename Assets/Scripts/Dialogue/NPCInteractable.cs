@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// Put on an NPC. When the player is within range and presses E (or taps the on-screen Talk button),
@@ -31,7 +30,6 @@ public class NPCInteractable : MonoBehaviour
     Transform player;
     bool talking;
     System.Action onTalkFinished;
-    GUIStyle buttonStyle;
 
     // The conversation for the current reading level. If that level has no file, the nearest level that does is used.
     DialogueData Data
@@ -74,13 +72,30 @@ public class NPCInteractable : MonoBehaviour
     bool PlayerInRange =>
         player != null && Vector3.Distance(player.position, transform.position) <= interactRange;
 
+    public float DistanceToPlayer =>
+        player != null ? Vector3.Distance(player.position, transform.position) : float.MaxValue;
+
+    bool reportedInRange;
+
+    // Tells the Talk prompt whether the player can talk to this NPC right now.
     void Update()
     {
-        if (talking || !HasDialogue || !PlayerInRange) return;
+        bool canTalk = !talking && HasDialogue && PlayerInRange;
+        if (canTalk == reportedInRange) return;
+        reportedInRange = canTalk;
+        InteractionPrompt.Instance?.SetInRange(this, canTalk);
+    }
 
-        var kb = Keyboard.current;
-        if (kb != null && kb.eKey.wasPressedThisFrame)
-            BeginTalk();
+    void OnDisable()
+    {
+        if (reportedInRange) InteractionPrompt.Instance?.SetInRange(this, false);
+        reportedInRange = false;
+    }
+
+    /// <summary>Starts the conversation. Called by the Talk prompt (E key or button).</summary>
+    public void Interact()
+    {
+        if (!talking && HasDialogue && PlayerInRange) BeginTalk();
     }
 
     void BeginTalk()
@@ -93,6 +108,7 @@ public class NPCInteractable : MonoBehaviour
 
         // Freeze the player and hide the touch controls so they don't sit over the dialogue box.
         PlayerControlLock.Lock();
+        PlayerControlLock.SetPlayerVisible(false);
 
         var lines = PickLines(data, out onTalkFinished);
         var convo = new DialogueData { npcName = data.npcName, lines = lines };
@@ -152,27 +168,13 @@ public class NPCInteractable : MonoBehaviour
         cb?.Invoke();
 
         if (dialogueCamera != null) dialogueCamera.SetActive(false);
+        PlayerControlLock.SetPlayerVisible(true);
         PlayerControlLock.Unlock();
         // Swallow the closing press so it can't instantly retrigger the conversation.
         Invoke(nameof(ResetTalking), 0.2f);
     }
 
     void ResetTalking() => talking = false;
-
-    void OnGUI()
-    {
-        if (talking || !HasDialogue || !PlayerInRange) return;
-
-        float s = DialogueManager.UIScale;
-        buttonStyle ??= new GUIStyle(GUI.skin.button);
-        buttonStyle.fontSize = Mathf.RoundToInt(24 * s);
-
-        // Tappable Talk button (works with mouse and touch); E also works on keyboard.
-        float w = 220f * s, h = 64f * s;
-        var rect = new Rect((Screen.width - w) / 2f, Screen.height * 0.6f, w, h);
-        if (GUI.Button(rect, "Talk  [E]", buttonStyle))
-            BeginTalk();
-    }
 
     void OnDrawGizmosSelected()
     {

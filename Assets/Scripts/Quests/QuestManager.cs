@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using System.Text;
+using TMPro;
 using UnityEngine;
 
 public enum QuestState { NotStarted, Active, Completed }
 
 /// <summary>
-/// Tracks quest state and collected items, and draws a small progress HUD (IMGUI).
-/// Created automatically on first use.
+/// Tracks quest state and collected items, and shows a small progress HUD on the game's Canvas
+/// (see the GameUI prefab). Works without a HUD too, if none is assigned.
 /// </summary>
 public class QuestManager : MonoBehaviour
 {
@@ -28,10 +30,21 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    [Header("HUD (optional)")]
+    [Tooltip("Parent of the HUD text. Shown only while a quest is active.")]
+    [SerializeField] GameObject hudRoot;
+    [SerializeField] TMP_Text hudText;
+
     readonly Dictionary<string, QuestState> states = new();
     readonly Dictionary<string, QuestData> activeQuests = new();
     readonly Dictionary<string, int> items = new();
-    GUIStyle hudStyle;
+    readonly StringBuilder sb = new();
+
+    void Awake()
+    {
+        instance = this;
+        RefreshHud();
+    }
 
     public QuestState GetState(QuestData q) =>
         q != null && states.TryGetValue(q.id, out var s) ? s : QuestState.NotStarted;
@@ -46,6 +59,7 @@ public class QuestManager : MonoBehaviour
         if (q == null || GetState(q) != QuestState.NotStarted) return;
         states[q.id] = QuestState.Active;
         activeQuests[q.id] = q;
+        RefreshHud();
     }
 
     public void CompleteQuest(QuestData q)
@@ -54,6 +68,7 @@ public class QuestManager : MonoBehaviour
         items[q.itemId] = GetCount(q.itemId) - q.requiredCount;
         states[q.id] = QuestState.Completed;
         activeQuests.Remove(q.id);
+        RefreshHud();
         QuestCompleted?.Invoke(q);
     }
 
@@ -63,34 +78,31 @@ public class QuestManager : MonoBehaviour
         if (q == null || GetState(q) == QuestState.Completed) return;
         states[q.id] = QuestState.Completed;
         activeQuests.Remove(q.id);
+        RefreshHud();
         QuestCompleted?.Invoke(q);
     }
 
     public void AddItem(string itemId, int amount = 1)
     {
         items[itemId] = GetCount(itemId) + amount;
+        RefreshHud();
     }
 
-    void OnGUI()
+    void RefreshHud()
     {
-        if (activeQuests.Count == 0) return;
-        float s = Mathf.Max(1f, Screen.height / 720f);
-        hudStyle ??= new GUIStyle(GUI.skin.label) { fontStyle = FontStyle.Bold, normal = { textColor = Color.white } };
-        hudStyle.fontSize = Mathf.RoundToInt(20 * s);
+        if (hudRoot != null) hudRoot.SetActive(activeQuests.Count > 0);
+        if (hudText == null) return;
 
-        float y = 12f * s;
+        sb.Clear();
         foreach (var q in activeQuests.Values)
         {
             int have = Mathf.Min(GetCount(q.itemId), q.requiredCount);
-            string text = have >= q.requiredCount
-                ? $"{q.title}: done - go back and tell them!"
-                : $"{q.title}: {have}/{q.requiredCount}";
-            // simple shadow for readability
-            hudStyle.normal.textColor = Color.black;
-            GUI.Label(new Rect(14f * s + 1, y + 1, Screen.width, 30f * s), text, hudStyle);
-            hudStyle.normal.textColor = have >= q.requiredCount ? new Color(0.6f, 1f, 0.6f) : Color.white;
-            GUI.Label(new Rect(14f * s, y, Screen.width, 30f * s), text, hudStyle);
-            y += 30f * s;
+            if (sb.Length > 0) sb.Append('\n');
+            if (have >= q.requiredCount)
+                sb.Append($"<color=#99FF99>{q.title}: done - go back and tell them!</color>");
+            else
+                sb.Append($"{q.title}: {have}/{q.requiredCount}");
         }
+        hudText.text = sb.ToString();
     }
 }
