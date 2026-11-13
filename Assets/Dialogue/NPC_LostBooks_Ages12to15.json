@@ -1,0 +1,27 @@
+{
+  "npcName": "Old Barnaby",
+  "quest": {
+    "id": "lost_books",
+    "title": "Find Barnaby's books",
+    "itemId": "book",
+    "requiredCount": 3
+  },
+  "lines": [
+    { "speaker": "Old Barnaby", "text": "Ah, a visitor! Forgive me, I'm Barnaby, and I'm afraid I'm in rather a <color=red>predicament</color>." },
+    { "speaker": "Old Barnaby", "text": "Three of my most treasured books have <color=red>vanished</color>. I had them with me only this morning." },
+    { "speaker": "Old Barnaby", "text": "I suspect I set them down during my <color=red>meandering</color> walk around the camp, and promptly forgot where." },
+    { "speaker": "Old Barnaby", "text": "Would you be willing to <color=red>retrieve</color> them for me? You'll spot them easily, since they'll be spinning in the open." },
+    { "speaker": "Old Barnaby", "text": "Bring them back and I shall be <color=red>eternally</color> grateful." }
+  ],
+  "inProgressLines": [
+    { "speaker": "Old Barnaby", "text": "Any sign of my books yet? They're <color=red>scattered</color> across the camp, and I'm quite anxious to have them returned." },
+    { "speaker": "Old Barnaby", "text": "Do keep searching. I have every <color=red>faith</color> in you." }
+  ],
+  "completeLines": [
+    { "speaker": "Old Barnaby", "text": "All three! I scarcely dared to <color=red>hope</color> you would find them." },
+    { "speaker": "Old Barnaby", "text": "<color=red>Well done</color>, truly. You've shown real <color=red>perseverance</color>, and I'm indebted to you." }
+  ],
+  "afterLines": [
+    { "speaker": "Old Barnaby", "text": "I can't thank you enough for recovering my books. They're <color=red>safe</color> with me now, I promise." }
+  ]
+}

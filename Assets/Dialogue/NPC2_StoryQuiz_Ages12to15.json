@@ -1,0 +1,41 @@
+{
+  "npcName": "Tilly",
+  "quest": {
+    "id": "story_quiz",
+    "title": "Tilly's story quiz",
+    "type": "quiz",
+    "rewardBooks": 4
+  },
+  "lines": [
+    { "speaker": "Tilly", "text": "Welcome! I'm Tilly, and I collect <color=red>stories</color> the way other people collect coins." },
+    { "speaker": "Tilly", "text": "Read this one closely, then answer four questions. Get them all right and four new <color=red>books</color> will find their way onto the library shelves." },
+    { "speaker": "Tilly", "text": "Odalys had spent forty years as a <color=red>cartographer</color>, drawing maps of coastlines no one else had dared to chart. Her final commission was the most <color=red>treacherous</color> yet: the Whispering Isles." },
+    { "speaker": "Tilly", "text": "Fog clung to the water, and her compass spun uselessly. Rather than panic, she studied the <color=red>patterns</color> of the gulls, which always flew toward land at dusk." },
+    { "speaker": "Tilly", "text": "By following the birds, she found a hidden channel between the rocks. When she finally sketched it, she wrote beneath it: \"Trust what you observe, not only what you were taught.\"" },
+    { "speaker": "Tilly", "text": "The map was never sold. Odalys hung it in her workshop, where apprentices came to learn that careful <color=red>observation</color> can succeed where instruments fail." },
+    {
+      "speaker": "Tilly", "text": "Question 1: Why was the final commission described as <color=red>treacherous</color>?",
+      "choices": [ "It involved dangerous, uncharted waters", "It paid very little", "It had to be finished quickly" ], "correctIndex": 0,
+      "hint": "Not quite. Reread how the first part describes the Whispering Isles.", "correctText": "Correct. The waters were dangerous and uncharted."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 2: How did Odalys find the hidden channel?",
+      "choices": [ "She asked local sailors", "She trusted her compass", "She followed the gulls" ], "correctIndex": 2,
+      "hint": "Not quite. Her compass was no use in the fog.", "correctText": "Yes. The gulls always flew toward land at dusk."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 3: What lesson does Odalys's note suggest?",
+      "choices": [ "Compasses should never be trusted", "Observation can matter as much as training", "Maps are never accurate" ], "correctIndex": 1,
+      "hint": "Not quite. Think about what she wrote beneath the map.", "correctText": "Exactly. What you notice can matter as much as what you were taught."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 4: In the final paragraph, what does <color=red>observation</color> most nearly mean?",
+      "choices": [ "Carefully watching", "Quickly guessing", "Loudly arguing" ], "correctIndex": 0,
+      "hint": "Not quite. Use the rest of the sentence as a clue.", "correctText": "Well reasoned. Careful watching, exactly."
+    },
+    { "speaker": "Tilly", "text": "Flawless. You read with real <color=red>precision</color>. Four new books are arriving in the library as we speak." }
+  ],
+  "afterLines": [
+    { "speaker": "Tilly", "text": "A pleasure, as always. Do go and see how the library's <color=red>collection</color> is coming along." }
+  ]
+}

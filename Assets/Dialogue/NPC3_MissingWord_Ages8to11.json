@@ -1,0 +1,43 @@
+{
+  "npcName": "Gus",
+  "quest": {
+    "id": "missing_words",
+    "title": "Gus's missing words",
+    "type": "quiz",
+    "rewardBooks": 5
+  },
+  "lines": [
+    { "speaker": "Gus", "text": "Good day! I'm Gus, the village <color=red>gardener</color>." },
+    { "speaker": "Gus", "text": "I was writing down the story of my giant pumpkin when a gust of wind blew five <color=red>words</color> clean off the page!" },
+    { "speaker": "Gus", "text": "Choose the word that fits each gap. Fill all five and five new books will appear in the library." },
+    {
+      "speaker": "Gus", "text": "Missing word 1:\nThe seed was so small that I could hardly <color=red>_____</color> it in my palm.",
+      "choices": [ "see", "hear", "taste" ], "correctIndex": 0,
+      "hint": "Not quite. Think about how you would notice something tiny.", "correctText": "The seed was so small that I could hardly <color=red>see</color> it in my palm."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 2:\nIt rained all week, so the soil was soft and <color=red>_____</color>.",
+      "choices": [ "dusty", "damp", "dry" ], "correctIndex": 1,
+      "hint": "Not quite. What is soil like after a week of rain?", "correctText": "It rained all week, so the soil was soft and <color=red>damp</color>."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 3:\nSlowly, a green shoot began to <color=red>_____</color> up through the earth.",
+      "choices": [ "fall", "melt", "push" ], "correctIndex": 2,
+      "hint": "Not quite. Which word shows the shoot getting through the soil?", "correctText": "Slowly, a green shoot began to <color=red>push</color> up through the earth."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 4:\nBy summer, the pumpkin was <color=red>_____</color> than any I had ever grown.",
+      "choices": [ "larger", "large", "largest" ], "correctIndex": 0,
+      "hint": "Not quite. Look at the word 'than'. It is comparing two things.", "correctText": "By summer, the pumpkin was <color=red>larger</color> than any I had ever grown."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 5:\nI was so proud that I <color=red>_____</color> the whole village to come and see it.",
+      "choices": [ "invite", "inviting", "invited" ], "correctIndex": 2,
+      "hint": "Not quite. The rest of the story is in the past tense.", "correctText": "I was so proud that I <color=red>invited</color> the whole village to come and see it."
+    },
+    { "speaker": "Gus", "text": "Every word back in its place! Thank you. Five new <color=red>books</color> are on their way to the library." }
+  ],
+  "afterLines": [
+    { "speaker": "Gus", "text": "Thanks again for rescuing my story. The library's looking much fuller now, don't you think?" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "npcName": "Old Barnaby",
+  "quest": {
+    "id": "lost_books",
+    "title": "Find Barnaby's books",
+    "itemId": "book",
+    "requiredCount": 3
+  },
+  "lines": [
+    { "speaker": "Old Barnaby", "text": "Oh, thank goodness, a visitor! Perhaps you can help me. I've gone and lost my books." },
+    { "speaker": "Old Barnaby", "text": "Three of them, I'm certain. I had them with me just this morning." },
+    { "speaker": "Old Barnaby", "text": "I must have set them down somewhere on my walk around the camp. Could you find them for me?" },
+    { "speaker": "Old Barnaby", "text": "They'll be spinning about in the open, you can't miss them. Bring them back and I'll be forever grateful!" }
+  ],
+  "inProgressLines": [
+    { "speaker": "Old Barnaby", "text": "Any luck finding my books? There should be three of them, scattered around the camp." },
+    { "speaker": "Old Barnaby", "text": "Keep looking. I'm sure they can't have gone far!" }
+  ],
+  "completeLines": [
+    { "speaker": "Old Barnaby", "text": "You found them! All three of them! I can't believe it." },
+    { "speaker": "Old Barnaby", "text": "Well done, my friend. You've made an old man very happy today." }
+  ],
+  "afterLines": [
+    { "speaker": "Old Barnaby", "text": "Thank you again for finding my books. I've kept them close ever since!" }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "npcName": "Tilly",
+  "quest": {
+    "id": "story_quiz",
+    "title": "Tilly's story quiz",
+    "type": "quiz",
+    "rewardBooks": 4
+  },
+  "lines": [
+    { "speaker": "Tilly", "text": "Hello there! I'm Tilly, and I collect <color=red>stories</color>." },
+    { "speaker": "Tilly", "text": "Listen carefully to my story, then answer four questions. If you get them all right, four new <color=red>books</color> will appear in the library!" },
+    { "speaker": "Tilly", "text": "Marta was the keeper of a <color=red>lighthouse</color> on a windswept cliff. Every evening she climbed two hundred steps to light the great lantern." },
+    { "speaker": "Tilly", "text": "One stormy night, the lantern flickered and went out. Far below, a fishing boat was <color=red>searching</color> for the harbour in the dark." },
+    { "speaker": "Tilly", "text": "Marta had no matches left, so she <color=red>hurried</color> down to the village to borrow some. The baker lent her a box, and she raced back up the stairs." },
+    { "speaker": "Tilly", "text": "At last the lantern blazed. The boat followed its light and landed safely, and the fishermen cheered." },
+    {
+      "speaker": "Tilly", "text": "Question 1: How many steps did Marta climb each evening?",
+      "choices": [ "One hundred", "Two hundred", "Three hundred" ], "correctIndex": 1,
+      "hint": "Not quite. Look back at the first part of the story!", "correctText": "Correct! Two hundred steps every evening."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 2: Why was the fishing boat in danger?",
+      "choices": [ "The harbour was closed", "The lantern had gone out", "The fishermen were asleep" ], "correctIndex": 1,
+      "hint": "Not quite. What happened on the stormy night?", "correctText": "Yes! Without the light, the boat could not find the harbour."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 3: Who lent Marta some matches?",
+      "choices": [ "A fisherman", "Her neighbour", "The baker" ], "correctIndex": 2,
+      "hint": "Not quite. Think about who she met in the village.", "correctText": "Right! The baker lent her a box."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 4: In the story, what does <color=red>hurried</color> mean?",
+      "choices": [ "Moved quickly", "Walked slowly", "Stopped to rest" ], "correctIndex": 0,
+      "hint": "Not quite. Marta was in a rush, remember!", "correctText": "Exactly! She moved quickly."
+    },
+    { "speaker": "Tilly", "text": "All four correct! You listen very well. Four new <color=red>books</color> are on their way to the library!" }
+  ],
+  "afterLines": [
+    { "speaker": "Tilly", "text": "Thank you for being such a good listener. Have a look at the library, it's filling up nicely!" }
+  ]
+}

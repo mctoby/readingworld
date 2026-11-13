@@ -1,0 +1,27 @@
+{
+  "npcName": "Old Barnaby",
+  "quest": {
+    "id": "lost_books",
+    "title": "Find Barnaby's books",
+    "itemId": "book",
+    "requiredCount": 3
+  },
+  "lines": [
+    { "speaker": "Old Barnaby", "text": "Oh, hello there! My name is Barnaby, and I seem to have a bit of a <color=red>problem</color>." },
+    { "speaker": "Old Barnaby", "text": "I have <color=red>lost</color> three of my favourite books. I am sure I had them this morning." },
+    { "speaker": "Old Barnaby", "text": "I must have put them down while I was <color=red>wandering</color> around the camp." },
+    { "speaker": "Old Barnaby", "text": "Could you <color=red>search</color> for them? They are spinning in the open, so they should be easy to spot." },
+    { "speaker": "Old Barnaby", "text": "Bring them back to me and I will be very <color=red>grateful</color>!" }
+  ],
+  "inProgressLines": [
+    { "speaker": "Old Barnaby", "text": "Have you found any of my <color=red>books</color> yet? There are three of them, <color=red>scattered</color> around the camp." },
+    { "speaker": "Old Barnaby", "text": "Keep looking. They cannot have gone far!" }
+  ],
+  "completeLines": [
+    { "speaker": "Old Barnaby", "text": "You found all three! I can hardly <color=red>believe</color> it." },
+    { "speaker": "Old Barnaby", "text": "<color=red>Well done</color>! You have made an old man very happy today." }
+  ],
+  "afterLines": [
+    { "speaker": "Old Barnaby", "text": "Thank you again for finding my books. I keep them close to me now, so they cannot <color=red>vanish</color> again!" }
+  ]
+}

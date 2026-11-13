@@ -1,0 +1,27 @@
+{
+  "npcName": "Old Barnaby",
+  "quest": {
+    "id": "lost_books",
+    "title": "Find Barnaby's books",
+    "itemId": "book",
+    "requiredCount": 3
+  },
+  "lines": [
+    { "speaker": "Old Barnaby", "text": "Oh, hello! I am Barnaby. I have a <color=red>problem</color>." },
+    { "speaker": "Old Barnaby", "text": "I lost my <color=red>books</color>! I had three." },
+    { "speaker": "Old Barnaby", "text": "Can you help me <color=red>find</color> them?" },
+    { "speaker": "Old Barnaby", "text": "Look around the camp. The books spin round and round." },
+    { "speaker": "Old Barnaby", "text": "Please bring them <color=red>back</color> to me!" }
+  ],
+  "inProgressLines": [
+    { "speaker": "Old Barnaby", "text": "Did you find my <color=red>books</color>?" },
+    { "speaker": "Old Barnaby", "text": "I need three. Keep looking!" }
+  ],
+  "completeLines": [
+    { "speaker": "Old Barnaby", "text": "You found my three <color=red>books</color>! Hooray!" },
+    { "speaker": "Old Barnaby", "text": "<color=red>Well done</color>! Thank you so much." }
+  ],
+  "afterLines": [
+    { "speaker": "Old Barnaby", "text": "Thank you for my <color=red>books</color>. I love to read them!" }
+  ]
+}
