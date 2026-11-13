@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,26 +16,48 @@ public class AgeMenu : MonoBehaviour
     [Tooltip("Optional: shows which reading group was chosen.")]
     [SerializeField] TMP_Text infoText;
 
+    bool chosen;
+
     void Start()
     {
         for (int i = 0; i < ageButtons.Length; i++)
         {
             int age = minAge + i;
-            var label = ageButtons[i].GetComponentInChildren<TMP_Text>();
+            var button = ageButtons[i];
+            var label = button.GetComponentInChildren<TMP_Text>();
             if (label != null) label.text = age.ToString();
-            ageButtons[i].onClick.AddListener(() => Choose(age));
+            button.onClick.AddListener(() => Choose(age, button));
         }
 
         if (infoText != null) infoText.text = "";
         panel.SetActive(true);
         PlayerControlLock.Lock();
+
+        // Buttons pop in one after another, after the box has appeared.
+        for (int i = 0; i < ageButtons.Length; i++)
+            ageButtons[i].GetComponent<JuiceButton>()?.Intro(0.35f + i * 0.05f);
     }
 
-    void Choose(int age)
+    void Choose(int age, Button picked)
     {
+        if (chosen) return;
+        chosen = true;
         ReadingSettings.Level = ReadingSettings.LevelForAge(age);
         Debug.Log($"Age {age} chosen: reading level {ReadingSettings.Level}");
-        panel.SetActive(false);
+        StartCoroutine(Finish(picked));
+    }
+
+    // Let the tapped button celebrate for a moment, then close the menu and release the player.
+    IEnumerator Finish(Button picked)
+    {
+        foreach (var b in ageButtons) if (b != picked) b.interactable = false;
+        var juice = picked.GetComponent<JuiceButton>();
+        if (juice != null) { juice.Flash(Color.white); juice.Punch(12f); }
+
+        yield return new WaitForSecondsRealtime(0.35f);
+
+        var pop = panel.GetComponent<PopIn>();
+        if (pop != null) pop.Hide(); else panel.SetActive(false);
         PlayerControlLock.Unlock();
     }
 }

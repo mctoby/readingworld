@@ -190,6 +190,9 @@ MonoBehaviour:
   spinSpeed: 90
   bobHeight: 0.03
   bobSpeed: 2
+  sparkleEffect: {fileID: 3768334595816233991, guid: a116e6c8d4fd74e429ceb3bfb74ffea9, type: 3}
+  collectDuration: 0.35
+  collectRise: 0.6
 --- !u!1 &3808131990852442351
 GameObject:
   m_ObjectHideFlags: 0

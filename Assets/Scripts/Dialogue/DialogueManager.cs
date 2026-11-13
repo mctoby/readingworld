@@ -53,9 +53,16 @@ public class DialogueManager : MonoBehaviour
     DialogueLine CurrentLine => current.lines[index];
     bool ShowingQuestion => praiseText == null && CurrentLine.IsQuestion;
 
+    [Header("Juice")]
+    [SerializeField] Color correctColor = new Color(0.5f, 1f, 0.55f);
+    [SerializeField] Color incorrectColor = new Color(1f, 0.4f, 0.35f);
+
+    PopIn panelPop;
+
     void Awake()
     {
         instance = this;
+        panelPop = panel.GetComponent<PopIn>();
         panel.SetActive(false);
         panelButton.onClick.AddListener(OnPanelClicked);
         for (int i = 0; i < choiceButtons.Length; i++)
@@ -74,8 +81,8 @@ public class DialogueManager : MonoBehaviour
         wrongPicks.Clear();
         praiseText = null;
         startFrame = Time.frameCount;   // ignore the key press that opened the conversation
-        panel.SetActive(true);
-        Refresh();
+        if (panelPop != null) panelPop.Show(); else panel.SetActive(true);
+        Refresh(true);
     }
 
     void Update()
@@ -108,8 +115,12 @@ public class DialogueManager : MonoBehaviour
         if (!IsActive || !ShowingQuestion || wrongPicks.Contains(choice)) return;
 
         var line = CurrentLine;
+        var juice = choiceButtons[choice].GetComponent<JuiceButton>();
         if (choice == line.correctIndex)
         {
+            // Right answer: green flash, a bump on the button and a little pulse through the whole panel.
+            if (juice != null) { juice.Flash(correctColor); juice.Punch(10f); }
+            if (panelPop != null) panelPop.Punch(0.04f);
             wrongPicks.Clear();
             if (!string.IsNullOrEmpty(line.correctText))
             {
@@ -123,6 +134,8 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            // Wrong answer: red flash and a head-shake.
+            if (juice != null) { juice.Flash(incorrectColor); juice.Shake(); }
             wrongPicks.Add(choice);
             Refresh();
         }
@@ -136,17 +149,18 @@ public class DialogueManager : MonoBehaviour
         if (index >= current.lines.Length)
         {
             current = null;
-            panel.SetActive(false);
+            if (panelPop != null) panelPop.Hide(); else panel.SetActive(false);
             var cb = onEnd;
             onEnd = null;
             cb?.Invoke();
             return;
         }
-        Refresh();
+        Refresh(true);
     }
 
     // Updates the panel to match the current line / question state.
-    void Refresh()
+    // newLine: true when a different line is appearing (answer buttons then pop in one after another).
+    void Refresh(bool newLine = false)
     {
         var line = CurrentLine;
         bool question = ShowingQuestion;
@@ -164,6 +178,7 @@ public class DialogueManager : MonoBehaviour
                 if (!used) continue;
                 choiceButtons[i].interactable = !wrongPicks.Contains(i);
                 choiceButtons[i].GetComponentInChildren<TMP_Text>().text = $"{i + 1}.  {line.choices[i]}";
+                if (newLine) choiceButtons[i].GetComponent<JuiceButton>()?.Intro(0.15f + i * 0.07f);
             }
 
             bool wrong = wrongPicks.Count > 0;

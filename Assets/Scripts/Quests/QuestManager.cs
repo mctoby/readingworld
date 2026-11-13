@@ -103,6 +103,11 @@ public class QuestManager : MonoBehaviour
             else
                 sb.Append($"{q.title}: {have}/{q.requiredCount}");
         }
-        hudText.text = sb.ToString();
+        // Bump the HUD whenever its text changes (a book collected, a quest ready to hand in).
+        string text = sb.ToString();
+        bool changed = hudText.text != text && !string.IsNullOrEmpty(hudText.text);
+        hudText.text = text;
+        if (changed && hudRoot != null && hudRoot.activeInHierarchy)
+            hudRoot.GetComponent<PopIn>()?.Punch(0.12f);
     }
 }

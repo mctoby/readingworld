@@ -37,6 +37,10 @@ public class LibraryManager : MonoBehaviour
     [SerializeField] float slideDuration = 0.5f;
     [SerializeField] float holdTime = 1.5f;
 
+    [Header("Juice")]
+    [Tooltip("Particle effect played where each book lands (e.g. SparkleBurst).")]
+    [SerializeField] GameObject landEffect;
+
     Bounds[] bookBounds;
     int nextBook;
     readonly Queue<Vector2Int> queue = new();   // (first book index, count)
@@ -144,17 +148,30 @@ public class LibraryManager : MonoBehaviour
         var t = book.transform;
         Vector3 end = t.position;
         Vector3 start = end + towardCamera * slideDistance + Vector3.up * (slideDistance * 0.3f);
+        Vector3 baseScale = t.localScale;
         t.position = start;
+        t.localScale = baseScale * 0.3f;
         book.SetActive(true);
 
         for (float time = 0f; time < slideDuration; time += Time.deltaTime)
         {
             float k = time / slideDuration;
-            k = 1f - (1f - k) * (1f - k) * (1f - k);   // ease out
-            t.position = Vector3.LerpUnclamped(start, end, k);
+            t.position = Vector3.LerpUnclamped(start, end, Juice.OutCubic(k));
+            t.localScale = baseScale * Mathf.LerpUnclamped(0.3f, 1f, Juice.OutBack(k));   // grows with a little overshoot
             yield return null;
         }
         t.position = end;
+        t.localScale = baseScale;
+
+        // Land with a sparkle.
+        Juice.Burst(landEffect, bookCenter(book, end));
+    }
+
+    // The book's visual centre once it is in place.
+    static Vector3 bookCenter(GameObject book, Vector3 position)
+    {
+        var r = book.GetComponentInChildren<Renderer>();
+        return r != null ? r.bounds.center : position;
     }
 
     // Places the library camera so the whole of 'target' is in view. Returns the horizontal direction

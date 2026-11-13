@@ -60,6 +60,7 @@ public class NPCInteractable : MonoBehaviour
         if (!HasDialogue)
             Debug.LogWarning($"{name}: no dialogue JSON assigned.", this);
 
+        baseScale = transform.localScale;
         if (dialogueCamera != null) dialogueCamera.SetActive(false);
     }
 
@@ -76,14 +77,48 @@ public class NPCInteractable : MonoBehaviour
         player != null ? Vector3.Distance(player.position, transform.position) : float.MaxValue;
 
     bool reportedInRange;
+    Vector3 baseScale = Vector3.one;
+    Coroutine hop;
 
     // Tells the Talk prompt whether the player can talk to this NPC right now.
     void Update()
     {
+        // Juice: turn to face the player while talking.
+        if (talking && player != null)
+        {
+            Vector3 d = player.position - transform.position;
+            d.y = 0f;
+            if (d.sqrMagnitude > 0.01f)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(d),
+                    1f - Mathf.Exp(-8f * Time.deltaTime));
+        }
+
         bool canTalk = !talking && HasDialogue && PlayerInRange;
         if (canTalk == reportedInRange) return;
         reportedInRange = canTalk;
         InteractionPrompt.Instance?.SetInRange(this, canTalk);
+
+        // Juice: a little hop of excitement when the player walks up.
+        if (canTalk)
+        {
+            if (hop != null) StopCoroutine(hop);
+            hop = StartCoroutine(Hop());
+        }
+    }
+
+    // Squash and stretch: a quick "hello!" bounce.
+    System.Collections.IEnumerator Hop()
+    {
+        const float time = 0.45f;
+        for (float t = 0f; t < time; t += Time.deltaTime)
+        {
+            float k = t / time;
+            float wave = Mathf.Sin(k * Mathf.PI * 2f) * (1f - k);
+            transform.localScale = new Vector3(baseScale.x * (1f - 0.08f * wave), baseScale.y * (1f + 0.12f * wave), baseScale.z * (1f - 0.08f * wave));
+            yield return null;
+        }
+        transform.localScale = baseScale;
+        hop = null;
     }
 
     void OnDisable()
