@@ -1,0 +1,95 @@
+{
+    "npcName": "Old Barnaby",
+    "quest": {
+        "id": "day3_barnaby",
+        "title": "Old Barnaby's space riddles",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 3,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Ah, hello again! Last night I wandered so far that I ended up lying on the grass, gazing at the <color=red>night sky</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "It gave me three <color=red>riddles</color> about space. Solve all three and three new books will be sent to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Now, where did I write them down? Aha, they were tucked inside my hat all along!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 1: I am a planet that travels in an <color=red>orbit</color> around the sun. I have blue oceans and green land, and you are standing on me right now. What am I?",
+            "choices": [
+                "Mars",
+                "The Earth",
+                "The moon"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Where are you standing right now?",
+            "correctText": "Correct! It's the Earth, our home planet."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 2: I am a person who travels into space. I wear a <color=red>bulky</color> suit and a helmet so that I can breathe. Who am I?",
+            "choices": [
+                "An astronaut",
+                "A pilot",
+                "A diver"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which of these people goes into space?",
+            "correctText": "Yes! An astronaut travels into space."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 3: I am a <color=red>frozen</color> lump of ice and dust. When I swoop close to the sun, I grow a long, glowing tail. What am I?",
+            "choices": [
+                "A rocket",
+                "A star",
+                "A comet"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Which of these is made of ice and dust and has a tail?",
+            "correctText": "Right! A comet has a glowing tail."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Three out of three! Your brain must be bigger than <color=red>Jupiter</color>. Three new books are on their way to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Thank you for solving my riddles. If you spot a <color=red>shooting star</color> tonight, make a wish for me!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

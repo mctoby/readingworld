@@ -1,0 +1,121 @@
+{
+    "npcName": "Mr. Page",
+    "quest": {
+        "id": "day3_librarian",
+        "title": "Bring back Mr. Page's space books",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "",
+        "rewardBooks": 0,
+        "requiredQuests": [
+            "day3_barnaby",
+            "day3_tilly",
+            "day3_gus"
+        ]
+    },
+    "unlockedByQuest": "",
+    "lines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Good morning! Welcome back to my <color=red>library</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Tonight the whole camp is going <color=red>stargazing</color>, so everybody has gone space-mad!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "They've borrowed every book about <color=red>planets</color>, rockets and stars. Not one has come back.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "My shelves are as empty as <color=red>outer space</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Old Barnaby, Tilly and Gus could each use a hand today. Would you go and <color=red>visit</color> them?",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Help all three, and I'm sure my books will come zooming back like a <color=red>comet</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "My space shelves are still full of <color=red>gaps</color>, I'm afraid.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Keep helping Barnaby, Tilly and Gus, then come back and <color=red>report</color> to Mission Control. That's me!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "completeLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Great galaxies! Every shelf is <color=red>packed</color> again!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "You helped Barnaby, Tilly and Gus, and every space book has <color=red>landed</color> safely.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "<color=red>Thank you</color>! You're a true star.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "afterLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The library is full of space books, and I'm <color=red>over the moon</color>! Come and explore whenever you like.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

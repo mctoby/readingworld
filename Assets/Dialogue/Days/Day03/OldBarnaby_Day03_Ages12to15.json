@@ -1,0 +1,95 @@
+{
+    "npcName": "Old Barnaby",
+    "quest": {
+        "id": "day3_barnaby",
+        "title": "Old Barnaby's cosmic riddles",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 3,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Ah, hello again! I spent half the night on the hill trying to identify the <color=red>constellations</color>, before realising I'd forgotten the way back.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "The experience inspired three <color=red>riddles</color> about space. Solve them all, and three new books will be dispatched to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "I wrote them on a scrap of paper which, by some miracle, I haven't lost. Shall we begin?",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 1: I am the star nearest to your home, a vast sphere of burning gas whose <color=red>gravity</color> holds eight planets in their paths. What am I?",
+            "choices": [
+                "The North Star",
+                "The sun",
+                "Jupiter"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Which star is closest to Earth and sits at the centre of our solar system?",
+            "correctText": "Precisely. The sun keeps all eight planets in orbit."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 2: People built me and <color=red>launched</color> me into orbit with no crew aboard. I circle the Earth, beaming down weather images and signals. What am I?",
+            "choices": [
+                "A satellite",
+                "A meteor",
+                "A space station"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Remember: people built it, and nobody travels inside it.",
+            "correctText": "Exactly. A satellite works quietly with no one aboard."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 3: I am a vast spiral of billions of stars, your sun among them. On a clear, dark night you may glimpse me as a faint, <color=red>luminous</color> band across the sky. What am I?",
+            "choices": [
+                "A nebula",
+                "The Milky Way",
+                "A comet"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Which of these contains your own sun?",
+            "correctText": "Well reasoned. The Milky Way is our home galaxy."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Three for three. Your reasoning is positively <color=red>astronomical</color>, and three new books are already on their way to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Thank you again. Whenever the sky is clear, I recommend a spot of <color=red>stargazing</color>; just remember the way home, unlike me.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

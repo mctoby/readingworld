@@ -1,0 +1,121 @@
+{
+    "npcName": "Mr. Page",
+    "quest": {
+        "id": "day3_librarian",
+        "title": "Recover the library's space collection",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "",
+        "rewardBooks": 0,
+        "requiredQuests": [
+            "day3_barnaby",
+            "day3_tilly",
+            "day3_gus"
+        ]
+    },
+    "unlockedByQuest": "",
+    "lines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Welcome back! I'm delighted to see you, though I confess the library has fallen into <color=red>disarray</color> once again.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "There's a meteor shower expected tonight, and the entire camp has developed a sudden passion for <color=red>astronomy</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Every book on planets, comets and <color=red>constellations</color> has been borrowed, and naturally not one has been returned.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "The shelves are now as empty as the <color=red>vacuum</color> of space. Not a single star chart remains.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Old Barnaby, Tilly and Gus each need a little help today. Would you be kind enough to <color=red>seek</color> them out?",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Assist all three, and I suspect my books will be pulled back here as surely as anything caught by <color=red>gravity</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The shelves remain rather <color=red>barren</color>, I'm sorry to report.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Do carry on assisting Barnaby, Tilly and Gus; the <color=red>mission</color> isn't complete until all three have been helped.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "completeLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Extraordinary! The shelves have been <color=red>replenished</color> from top to bottom.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Barnaby, Tilly and Gus have all been helped, and every volume has made a flawless <color=red>re-entry</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "<color=red>Thank you</color>, truly. Your help has been nothing short of <color=red>stellar</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "afterLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The library is full once more, and I'm in a state of near <color=red>cosmic</color> contentment. Browse whenever you wish.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

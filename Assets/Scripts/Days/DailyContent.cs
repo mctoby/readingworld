@@ -51,8 +51,8 @@ public class DailyContent : ScriptableObject
 
     public List<Day> days = new();
 
-    [Tooltip("Editor only: which day Play mode uses. 0 = count real days of play like a build does.")]
-    public int editorPlayDay = 1;
+    [Tooltip("Editor only: force Play mode to use this day. 0 = use the saved progress, like a build does.")]
+    public int editorPlayDay = 0;
 
     static DailyContent instance;
 
@@ -65,61 +65,78 @@ public class DailyContent : ScriptableObject
         }
     }
 
-    /// <summary>
-    /// The conversation files for this NPC today, or null to use the NPC's own (day 1) files.
-    /// A day with no content of its own repeats the latest day before it.
-    /// </summary>
+    /// <summary>The latest live generated day that is no later than 'target', or 1 (the hand-written day) if there is none.</summary>
+    public int LatestDayUpTo(int target)
+    {
+        int best = 1;
+        foreach (var d in days)
+            if (d.live && d.day >= 2 && d.day <= target && d.day > best) best = d.day;
+        return best;
+    }
+
+    /// <summary>The conversation files for this NPC today, or null to use the NPC's own (day 1) files.</summary>
     public static TextAsset[] FilesFor(string npcId)
     {
         var content = Instance;
         if (content == null || string.IsNullOrEmpty(npcId)) return null;
 
-        Day best = null;
         int today = GameDay.Current;
+        if (today < 2) return null;
         foreach (var d in content.days)
-            if (d.live && d.day >= 2 && d.day <= today && (best == null || d.day > best.day))
-                best = d;
-        if (best == null) return null;
-
-        foreach (var n in best.npcs)
-            if (n.npcId == npcId) return n.All;
+        {
+            if (d.day != today || !d.live) continue;
+            foreach (var n in d.npcs)
+                if (n.npcId == npcId) return n.All;
+        }
         return null;
     }
 }
 
 /// <summary>
-/// Which day of play this is: 1 on the first date the game is played, 2 on the next date it is played, and so on
-/// (days without play don't count). Stored in PlayerPrefs.
+/// Which day the game is on. A day is finished by handing in to the host (Mr. Page) after every mission; that is
+/// saved, and the next time the game starts it moves on to the next day. If that day hasn't been made yet, the
+/// latest day that exists is played again. Progress is stored in PlayerPrefs.
 /// </summary>
 public static class GameDay
 {
-    const string LastDateKey = "GameDay.LastDate";
-    const string CountKey = "GameDay.Count";
+    const string CompletedKey = "GameDay.Completed";
 
     static int current;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     static void ResetState() => current = 0;
 
+    /// <summary>The highest day the player has finished (0 = none yet).</summary>
+    public static int Completed => PlayerPrefs.GetInt(CompletedKey, 0);
+
+    /// <summary>The day being played this session. Fixed when first asked, so it doesn't change mid-session.</summary>
     public static int Current
     {
         get
         {
             if (current > 0) return current;
-#if UNITY_EDITOR
             var content = DailyContent.Instance;
+#if UNITY_EDITOR
             if (content != null && content.editorPlayDay > 0) return current = content.editorPlayDay;
 #endif
-            string today = DateTime.Now.ToString("yyyy-MM-dd");
-            int count = PlayerPrefs.GetInt(CountKey, 0);
-            if (PlayerPrefs.GetString(LastDateKey, "") != today)
-            {
-                count++;
-                PlayerPrefs.SetString(LastDateKey, today);
-                PlayerPrefs.SetInt(CountKey, count);
-                PlayerPrefs.Save();
-            }
-            return current = Mathf.Max(1, count);
+            int next = Completed + 1;
+            return current = content != null ? content.LatestDayUpTo(next) : 1;
         }
+    }
+
+    /// <summary>Records that 'day' has been finished. Never moves progress backwards.</summary>
+    public static void MarkComplete(int day)
+    {
+        if (day <= Completed) return;
+        PlayerPrefs.SetInt(CompletedKey, day);
+        PlayerPrefs.Save();
+    }
+
+    /// <summary>Forgets all progress: the next start is day 1 again.</summary>
+    public static void ResetProgress()
+    {
+        PlayerPrefs.DeleteKey(CompletedKey);
+        PlayerPrefs.Save();
+        current = 0;
     }
 }

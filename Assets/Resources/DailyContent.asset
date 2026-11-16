@@ -58,4 +58,24 @@ MonoBehaviour:
       ages5to8: {fileID: 4900000, guid: 2290dbb53f52d45b48c7a7791aceb1b6, type: 3}
       ages8to11: {fileID: 4900000, guid: f6d93abb078d94f758ca159b946dea19, type: 3}
       ages12to15: {fileID: 4900000, guid: fb7c649c257114a66afc071eb4128a56, type: 3}
-  editorPlayDay: 2
+  - day: 3
+    topic: Space
+    live: 1
+    npcs:
+    - npcId: librarian
+      ages5to8: {fileID: 4900000, guid: b057381477b3b4566aadec3f4d248927, type: 3}
+      ages8to11: {fileID: 4900000, guid: 907d64a50b85f46308008cb39e21b981, type: 3}
+      ages12to15: {fileID: 4900000, guid: a5f56f4ca23404e479e470879b864161, type: 3}
+    - npcId: barnaby
+      ages5to8: {fileID: 4900000, guid: 37ef337c241cf42eaa9933b241e1ed9c, type: 3}
+      ages8to11: {fileID: 4900000, guid: 158ad42dd944b4f8e87d0c88352a4555, type: 3}
+      ages12to15: {fileID: 4900000, guid: 14e84b1714dbb492286cf03681f6e828, type: 3}
+    - npcId: tilly
+      ages5to8: {fileID: 4900000, guid: a359ab297db6a48a7afbc2b28f2c9a97, type: 3}
+      ages8to11: {fileID: 4900000, guid: a1311647bc54c44a0982d30fe1fd29c5, type: 3}
+      ages12to15: {fileID: 4900000, guid: 9b111e727f65e41bbbf2dfb44b1e088a, type: 3}
+    - npcId: gus
+      ages5to8: {fileID: 4900000, guid: d26497c33139d47bda737acb9f6665b3, type: 3}
+      ages8to11: {fileID: 4900000, guid: 9b5eb4d6bc0fc49c6b9123b700809271, type: 3}
+      ages12to15: {fileID: 4900000, guid: ce92f9c68988c47c98b252e04eecc3b8, type: 3}
+  editorPlayDay: 0

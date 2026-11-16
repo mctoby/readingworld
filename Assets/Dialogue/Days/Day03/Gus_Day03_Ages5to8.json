@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day3_gus",
+        "title": "Gus's space words",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Hello again! It is me, Gus. Look up at the <color=red>stars</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "My space story lost five words. Can you <color=red>fill</color> the gaps? Then the library gets five new books!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nAt night, I see the <color=red>_____</color> in the sky.",
+            "choices": [
+                "moon",
+                "fish",
+                "cake"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. What shines in the sky at night?",
+            "correctText": "At night, I see the <color=red>moon</color> in the sky."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nThe sun is a big, hot <color=red>_____</color>.",
+            "choices": [
+                "shoe",
+                "star",
+                "cup"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. The sun is in the sky. What else is up there?",
+            "correctText": "The sun is a big, hot <color=red>star</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nWe live on a planet called <color=red>_____</color>.",
+            "choices": [
+                "Sock",
+                "Bread",
+                "Earth"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. What is the name of our home planet?",
+            "correctText": "We live on a planet called <color=red>Earth</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nAn astronaut flies up into space in a <color=red>_____</color>.",
+            "choices": [
+                "rocket",
+                "bath",
+                "bed"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. What can fly up very high?",
+            "correctText": "An astronaut flies up into space in a <color=red>rocket</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nAstronauts wear a <color=red>_____</color> on their heads to stay safe.",
+            "choices": [
+                "crown",
+                "helmet",
+                "scarf"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. What keeps your head safe?",
+            "correctText": "Astronauts wear a <color=red>helmet</color> on their heads to stay safe."
+        },
+        {
+            "speaker": "Gus",
+            "text": "You found all five words! Five new <color=red>books</color> are going to the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thank you for my space story. Look up tonight and wave at the <color=red>moon</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}
