@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day2_gus",
+        "title": "Gus's dinosaur words",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Welcome back! I unearthed a curious stone in the vegetable beds this morning, and it set me thinking about <color=red>prehistoric</color> life.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "I've written five sentences about dinosaurs, though each has lost a word. Supply the most fitting word for every gap, and five new <color=red>books</color> will arrive in the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nDinosaurs <color=red>_____</color> the land for roughly 165 million years, far longer than humans have existed.",
+            "choices": [
+                "abandoned",
+                "dominated",
+                "avoided"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. The sentence stresses how long and how successfully they lived on land.",
+            "correctText": "Dinosaurs <color=red>dominated</color> the land for roughly 165 million years, far longer than humans have existed."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nMost of what we know comes from <color=red>_____</color>, the preserved remains of ancient organisms found in rock.",
+            "choices": [
+                "minerals",
+                "footnotes",
+                "fossils"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. The words after the comma define the missing word.",
+            "correctText": "Most of what we know comes from <color=red>fossils</color>, the preserved remains of ancient organisms found in rock."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nTriceratops was a <color=red>_____</color>, grazing on low-growing plants rather than hunting other animals.",
+            "choices": [
+                "herbivore",
+                "carnivore",
+                "predator"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. It ate plants, not other animals.",
+            "correctText": "Triceratops was a <color=red>herbivore</color>, grazing on low-growing plants rather than hunting other animals."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nMany scientists believe a massive asteroid struck Earth about 66 million years ago; <color=red>_____</color>, the climate changed dramatically.",
+            "choices": [
+                "nevertheless",
+                "consequently",
+                "for instance"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. The climate change was a result of the impact. Which word links cause and effect?",
+            "correctText": "Many scientists believe a massive asteroid struck Earth about 66 million years ago; <color=red>consequently</color>, the climate changed dramatically."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nFeathered fossils <color=red>_____</color> that birds are the living descendants of dinosaurs.",
+            "choices": [
+                "deny",
+                "forget",
+                "suggest"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Feathers on dinosaur fossils are evidence for the link, not against it.",
+            "correctText": "Feathered fossils <color=red>suggest</color> that birds are the living descendants of dinosaurs."
+        },
+        {
+            "speaker": "Gus",
+            "text": "<color=red>Meticulous</color> work! Every gap is filled, and five new books are on their way to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thank you again. I like to think the sparrows in my garden are tiny dinosaurs, which makes weeding rather more <color=red>exhilarating</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

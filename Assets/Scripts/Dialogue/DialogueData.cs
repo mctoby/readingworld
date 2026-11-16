@@ -44,6 +44,7 @@ public class DialogueData
 {
     public string npcName;
     public QuestData quest;                 // optional
+    public string unlockedByQuest;          // optional: overrides the NPC's "Unlocked By Quest" (used by generated days)
 
     public DialogueLine[] lines;            // first meeting / quest offer
     public DialogueLine[] inProgressLines;  // quest accepted, not finished yet

@@ -1,0 +1,131 @@
+{
+    "npcName": "Tilly",
+    "quest": {
+        "id": "day2_tilly",
+        "title": "Tilly's dinosaur quiz",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 4,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Tilly",
+            "text": "Hi again! It is Tilly. Today I have a <color=red>dinosaur</color> story!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Listen to my story. Then I will ask four <color=red>questions</color>. Get them right and the library gets four new books!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Dot is a small green dinosaur. Dot has a long <color=red>tail</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "One day, Dot finds a big white <color=red>egg</color> in the grass.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Dot sits by the egg all night. Dot keeps it <color=red>warm</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "In the morning, crack! A baby dinosaur pops out. Now Dot has a new <color=red>friend</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 1: What colour is Dot?",
+            "choices": [
+                "Green",
+                "Blue",
+                "Red"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Think about the start of the story!",
+            "correctText": "Yes! Dot is green."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 2: What does Dot find in the grass?",
+            "choices": [
+                "A ball",
+                "An egg",
+                "A hat"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. It is big and white!",
+            "correctText": "That is right! Dot finds an egg."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 3: Why does Dot sit by the egg?",
+            "choices": [
+                "To eat it",
+                "To hide it",
+                "To keep it warm"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Dot sits there all night. Try again!",
+            "correctText": "Well done! Dot keeps the egg warm."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 4: What comes out of the egg?",
+            "choices": [
+                "A baby dinosaur",
+                "A fish",
+                "A cake"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Think about the end of the story!",
+            "correctText": "Yes! A baby dinosaur comes out."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Four out of four! You are so <color=red>clever</color>. The library has four new books!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Tilly",
+            "text": "I love dinosaur stories. Go and read the new <color=red>books</color> in the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

@@ -165,8 +165,11 @@ public class DialogueManager : MonoBehaviour
         var line = CurrentLine;
         bool question = ShowingQuestion;
 
-        speakerText.text = string.IsNullOrEmpty(line.speaker) ? current.npcName : line.speaker;
+        speakerText.text =  string.IsNullOrEmpty(line.speaker) ? "<sketchy>" + current.npcName : "<sketchy>" + line.speaker;
         bodyText.text = praiseText ?? line.text;
+
+        // Any highlighted (red) words in what is now on screen go into the reader's glossary.
+        WordGlossary.Instance?.CollectFrom(bodyText.text, speakerText.text);
 
         choiceContainer.SetActive(question);
         if (question)

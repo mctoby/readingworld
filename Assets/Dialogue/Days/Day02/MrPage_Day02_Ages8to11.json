@@ -1,0 +1,121 @@
+{
+    "npcName": "Mr. Page",
+    "quest": {
+        "id": "day2_librarian",
+        "title": "Bring back the dinosaur books",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "",
+        "rewardBooks": 0,
+        "requiredQuests": [
+            "day2_barnaby",
+            "day2_tilly",
+            "day2_gus"
+        ]
+    },
+    "unlockedByQuest": "",
+    "lines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Good morning, and welcome back! I hope you're ready for another <color=red>adventure</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Last night I gave a little talk about <color=red>dinosaurs</color>, and now the whole camp is dinosaur-mad!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "By breakfast, every single dinosaur book had been <color=red>borrowed</color>. Not one has come back.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "I'm afraid my dinosaur shelf is now as <color=red>extinct</color> as a Tyrannosaurus!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Barnaby, Tilly and Gus each need a hand with something today. Would you go and <color=red>visit</color> them?",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Help all three, and I'm sure my books will come <color=red>thundering</color> home like a herd of Triceratops.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The dinosaur shelf is still looking rather <color=red>lonely</color>, I'm afraid.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Keep helping Barnaby, Tilly and Gus, then come back once you've <color=red>finished</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "completeLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Great galloping Stegosaurus, the shelves are <color=red>bursting</color> with dinosaur books!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "You helped every one of my friends. I'm absolutely <color=red>thrilled</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Thank you! You're a hero of truly <color=red>prehistoric</color> size.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "afterLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The dinosaur books are back where they <color=red>belong</color>. Pop in and read about them whenever you like!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

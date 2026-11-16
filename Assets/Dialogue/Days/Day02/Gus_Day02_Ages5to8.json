@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day2_gus",
+        "title": "Gus's dinosaur words",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Hello again! It is me, Gus. Today I am thinking about <color=red>dinosaurs</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Five words are missing from my dinosaur lines. Fill each gap, and the library gets five new <color=red>books</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nDinosaurs lived a long, long time <color=red>_____</color>.",
+            "choices": [
+                "ago",
+                "soon",
+                "now"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Dinosaurs lived before us. Which word fits?",
+            "correctText": "Dinosaurs lived a long, long time <color=red>ago</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nSome dinosaurs were as big as a <color=red>_____</color>.",
+            "choices": [
+                "bean",
+                "house",
+                "bug"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Which one is very big?",
+            "correctText": "Some dinosaurs were as big as a <color=red>house</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nBaby dinosaurs came out of <color=red>_____</color>.",
+            "choices": [
+                "boots",
+                "cups",
+                "eggs"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Where do baby birds come from?",
+            "correctText": "Baby dinosaurs came out of <color=red>eggs</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nT. rex had big, sharp <color=red>_____</color>.",
+            "choices": [
+                "teeth",
+                "wings",
+                "wheels"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. What does an animal bite with?",
+            "correctText": "T. rex had big, sharp <color=red>teeth</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nWe find dinosaur <color=red>_____</color> in rocks today.",
+            "choices": [
+                "cakes",
+                "bones",
+                "toys"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. What is left of a dinosaur after a long time?",
+            "correctText": "We find dinosaur <color=red>bones</color> in rocks today."
+        },
+        {
+            "speaker": "Gus",
+            "text": "You found all five words! Five new books are off to the <color=red>library</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thank you! Some dinosaurs ate plants. I bet they loved my <color=red>cabbages</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

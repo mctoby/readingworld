@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f79decc866c4be2bb473388e9026c0, type: 3}
+  m_Name: DailyContent
+  m_EditorClassIdentifier: Assembly-CSharp::DailyContent
+  characters:
+  - npcId: librarian
+    name: Mr. Page
+    isHost: 1
+    personality: The kind, slightly flustered librarian. His library became so popular that everyone borrowed books and nobody brought them back, so his shelves keep emptying. He starts each day and is overjoyed when the shelves fill up again.
+    mission: 
+    rewardBooks: 3
+  - npcId: barnaby
+    name: Old Barnaby
+    isHost: 0
+    personality: A gentle, forgetful old man who loves long meandering walks around the camp and is always losing things.
+    mission: Three riddles about the topic. Each riddle is a multiple-choice question; Barnaby describes something and the reader picks what it is.
+    rewardBooks: 3
+  - npcId: tilly
+    name: Tilly
+    isHost: 0
+    personality: A cheerful, curious girl who collects stories and loves telling them.
+    mission: Tell a short original story about the topic (3-4 lines), then ask four multiple-choice questions about what happened in it.
+    rewardBooks: 4
+  - npcId: gus
+    name: Gus
+    isHost: 0
+    personality: A friendly gardener who loves words as much as his vegetables.
+    mission: Five sentences about the topic, each with one missing word. The reader picks the word that fills the gap.
+    rewardBooks: 5
+  days:
+  - day: 2
+    topic: Dinosaurs
+    live: 1
+    npcs:
+    - npcId: librarian
+      ages5to8: {fileID: 4900000, guid: 27497cca3eaf346dea6abb7c224db790, type: 3}
+      ages8to11: {fileID: 4900000, guid: af382c2301b3f47b493f5bb652375057, type: 3}
+      ages12to15: {fileID: 4900000, guid: 3740aedf2404a4bd7af505d5e07c9c0a, type: 3}
+    - npcId: barnaby
+      ages5to8: {fileID: 4900000, guid: 67a06f347fb844dd48d57db08027919b, type: 3}
+      ages8to11: {fileID: 4900000, guid: ce4d6288f0f174f88aac388d5f451a6f, type: 3}
+      ages12to15: {fileID: 4900000, guid: 6df937f02bb9a41a09bd25d5295fabad, type: 3}
+    - npcId: tilly
+      ages5to8: {fileID: 4900000, guid: 4e4583ef7da654a68ae6b18192961a2e, type: 3}
+      ages8to11: {fileID: 4900000, guid: 170c3230d5b8b41a983be69fa36fb7eb, type: 3}
+      ages12to15: {fileID: 4900000, guid: f52eaa2c5892a41ffb614a6625a5c33e, type: 3}
+    - npcId: gus
+      ages5to8: {fileID: 4900000, guid: 2290dbb53f52d45b48c7a7791aceb1b6, type: 3}
+      ages8to11: {fileID: 4900000, guid: f6d93abb078d94f758ca159b946dea19, type: 3}
+      ages12to15: {fileID: 4900000, guid: fb7c649c257114a66afc071eb4128a56, type: 3}
+  editorPlayDay: 2

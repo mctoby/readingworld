@@ -9,6 +9,9 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour
 {
     [Header("Conversation (one JSON per reading level)")]
+    [Tooltip("Links this NPC to its conversations for later days in Resources/DailyContent, e.g. \"tilly\". The files below are day 1.")]
+    [SerializeField] string npcId = "";
+
     [Tooltip("Ages 5-8 (the default level). Highlight key words with <color=red>word</color>.")]
     [SerializeField] TextAsset dialogueAges5to8;
     [Tooltip("Ages 8-11.")]
@@ -45,7 +48,7 @@ public class NPCInteractable : MonoBehaviour
             int level = (int)ReadingSettings.Level;
             if (cache[level] != null) return cache[level];
 
-            var assets = new[] { dialogueAges5to8, dialogueAges8to11, dialogueAges12to15 };
+            var assets = Assets;
             for (int d = 0; d < 3; d++)
             {
                 foreach (int i in new[] { level - d, level + d })
@@ -59,7 +62,18 @@ public class NPCInteractable : MonoBehaviour
         }
     }
 
-    bool HasDialogue => dialogueAges5to8 != null || dialogueAges8to11 != null || dialogueAges12to15 != null;
+    // Today's files: a generated day from DailyContent if there is one for this NPC, otherwise the day 1 files above.
+    TextAsset[] Assets =>
+        DailyContent.FilesFor(npcId) ?? new[] { dialogueAges5to8, dialogueAges8to11, dialogueAges12to15 };
+
+    bool HasDialogue
+    {
+        get
+        {
+            foreach (var a in Assets) if (a != null) return true;
+            return false;
+        }
+    }
 
     // False until the quest named in 'unlockedByQuest' has been started. Once unlocked, stays unlocked.
     bool unlocked;
@@ -68,8 +82,12 @@ public class NPCInteractable : MonoBehaviour
         get
         {
             if (!unlocked)
-                unlocked = string.IsNullOrEmpty(unlockedByQuest)
-                    || QuestManager.Instance.GetState(unlockedByQuest) != QuestState.NotStarted;
+            {
+                // A generated day names its own gate (that day's Librarian quest).
+                var data = Data;
+                string gate = data != null && !string.IsNullOrEmpty(data.unlockedByQuest) ? data.unlockedByQuest : unlockedByQuest;
+                unlocked = string.IsNullOrEmpty(gate) || QuestManager.Instance.GetState(gate) != QuestState.NotStarted;
+            }
             return unlocked;
         }
     }

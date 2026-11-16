@@ -1,0 +1,131 @@
+{
+    "npcName": "Tilly",
+    "quest": {
+        "id": "day2_tilly",
+        "title": "Tilly's dinosaur quiz",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 4,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Tilly",
+            "text": "Hello again! Today's story is all about <color=red>dinosaurs</color>, my favourite topic in the whole world.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Read <color=red>carefully</color>, then answer four questions. Get them all right and four new books will land on the library shelves!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Priya loved hunting for <color=red>fossils</color> on the beach near her grandad's cottage.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "One windy morning, just after a storm, she spotted something <color=red>curved</color> poking out of the cliff. It was a huge tooth, as long as her hand!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "She took it to the town museum, where an <color=red>expert</color> explained that it once belonged to a dinosaur that lived millions of years ago.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "The museum put the tooth in a glass case with a little card underneath: <color=red>Discovered</color> by Priya, aged nine.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 1: Where did Priya like to hunt for fossils?",
+            "choices": [
+                "In a forest",
+                "On the beach near her grandad's cottage",
+                "In her school garden"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Look back at the very first part of the story!",
+            "correctText": "Correct! She searched the beach near her grandad's cottage."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 2: What had happened just before Priya found the tooth?",
+            "choices": [
+                "A storm",
+                "A heatwave",
+                "A snowfall"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. It was a windy morning, remember?",
+            "correctText": "Yes! She found it just after a storm."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 3: Who told Priya that the tooth came from a dinosaur?",
+            "choices": [
+                "Her grandad",
+                "Her teacher",
+                "An expert at the museum"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Think about where she took the tooth.",
+            "correctText": "Right! The museum expert explained it."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 4: In the story, what does <color=red>discovered</color> mean?",
+            "choices": [
+                "Found for the first time",
+                "Lost somewhere",
+                "Broken into pieces"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Priya was the one who spotted it in the cliff!",
+            "correctText": "Exactly! Priya was the first to find it."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Four out of four! You'd make a brilliant <color=red>detective</color>. Four new books are heading to the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Tilly",
+            "text": "Thanks for reading with me! I've heard the library now has a whole shelf about <color=red>prehistoric</color> creatures.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

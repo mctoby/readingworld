@@ -1,0 +1,131 @@
+{
+    "npcName": "Tilly",
+    "quest": {
+        "id": "day2_tilly",
+        "title": "Tilly's dinosaur quiz",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 4,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Tilly",
+            "text": "Welcome back! Today's tale reaches back some seventy million years, to the age of the <color=red>dinosaurs</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Read it <color=red>attentively</color>, then answer four questions. Answer them all correctly and four new books will join the library's collection.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Dr Ines Okafor had spent a decade studying <color=red>fossilised</color> footprints, convinced that tracks could reveal more about dinosaurs than bones alone.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "In a dried riverbed she uncovered a remarkable <color=red>trackway</color>: dozens of large prints heading in one direction, with smaller prints sheltered in the centre.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Her colleagues assumed the herd had been fleeing a <color=red>predator</color>, but Ines noticed that the strides were short and evenly spaced, suggesting the animals had been walking calmly.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "She proposed that these dinosaurs travelled in protective family groups, a <color=red>hypothesis</color> that has since inspired a whole generation of researchers.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 1: What did Ines believe footprints could reveal?",
+            "choices": [
+                "Exactly how old the Earth is",
+                "More about dinosaurs than bones alone",
+                "Where dinosaurs laid their eggs"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Reread the first part of the story.",
+            "correctText": "Correct. She thought tracks could tell us more than bones alone."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 2: Why were the smaller prints in the centre significant?",
+            "choices": [
+                "They showed smaller dinosaurs chasing larger ones",
+                "They had been made on a different day",
+                "They suggested young dinosaurs were being protected"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Notice the word sheltered, and think about her final conclusion.",
+            "correctText": "Yes. The herd seems to have surrounded its young."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 3: What evidence led Ines to doubt that the herd was fleeing?",
+            "choices": [
+                "The strides were short and evenly spaced",
+                "There were no predator prints nearby",
+                "The riverbed was too deep to run through"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Look at what she noticed that her colleagues had missed.",
+            "correctText": "Exactly. Short, even strides suggest a calm walk, not a panicked run."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 4: In the final part, what does <color=red>hypothesis</color> most nearly mean?",
+            "choices": [
+                "A proven fact",
+                "A proposed explanation that can be tested",
+                "A detailed map of a site"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. She proposed the idea; it had not yet been proven.",
+            "correctText": "Well reasoned. A hypothesis is an idea put forward to be tested."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Impeccable reasoning. You'd make a fine <color=red>palaeontologist</color>. Four new books are on their way to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Tilly",
+            "text": "Thanks again. I hear the library's new arrivals include a superb <color=red>illustrated</color> guide to prehistoric life.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}
