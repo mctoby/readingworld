@@ -30,7 +30,12 @@ public class QuestData
     public string type;
     public int rewardBooks;      // books added to the library on completion (0 = use requiredCount)
 
+    // Optional: ids of other quests that must all be completed before this one can be handed in
+    // (e.g. the Librarian's quest is "finish everyone else's quest"). Used instead of itemId / requiredCount.
+    public string[] requiredQuests;
+
     public bool IsQuiz => type == "quiz";
+    public bool NeedsOtherQuests => requiredQuests != null && requiredQuests.Length > 0;
     public int RewardBooks => rewardBooks > 0 ? rewardBooks : requiredCount;
 }
 

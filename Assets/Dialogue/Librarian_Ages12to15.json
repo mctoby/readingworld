@@ -1,0 +1,28 @@
+{
+  "npcName": "Mr. Page",
+  "quest": {
+    "id": "library_help",
+    "title": "Help Mr. Page fill the library",
+    "requiredQuests": ["lost_books", "story_quiz", "missing_words"]
+  },
+  "lines": [
+    { "speaker": "Mr. Page", "text": "Ah, a new face! I'm Mr. Page, the <color=red>librarian</color> here, and you find me in something of a pickle." },
+    { "speaker": "Mr. Page", "text": "My library has become a victim of its own <color=red>popularity</color>. Everyone in camp has been borrowing books by the armful." },
+    { "speaker": "Mr. Page", "text": "Unfortunately, not one of them has thought to <color=red>return</color> anything." },
+    { "speaker": "Mr. Page", "text": "See for yourself: the shelves are entirely <color=red>bare</color>. A library without books is merely a cupboard." },
+    { "speaker": "Mr. Page", "text": "Barnaby, Tilly and Gus were among my most <color=red>enthusiastic</color> borrowers. Would you seek them out for me?" },
+    { "speaker": "Mr. Page", "text": "I gather each of them could use some <color=red>assistance</color>. Help them, and I suspect my books will come home." }
+  ],
+  "inProgressLines": [
+    { "speaker": "Mr. Page", "text": "The shelves are still looking rather <color=red>sparse</color>, I'm sorry to say." },
+    { "speaker": "Mr. Page", "text": "Do <color=red>persevere</color> with Barnaby, Tilly and Gus, and come back when you've helped all three." }
+  ],
+  "completeLines": [
+    { "speaker": "Mr. Page", "text": "Well, I never! Every shelf is <color=red>brimming</color> again." },
+    { "speaker": "Mr. Page", "text": "You helped each of my friends, and every last book has been <color=red>restored</color>. I am absolutely overjoyed." },
+    { "speaker": "Mr. Page", "text": "<color=red>Thank you</color>, sincerely. This library is in your debt." }
+  ],
+  "afterLines": [
+    { "speaker": "Mr. Page", "text": "The library is full once more, and I'm thoroughly <color=red>content</color>. You're welcome to browse whenever you wish." }
+  ]
+}

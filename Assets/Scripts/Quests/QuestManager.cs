@@ -49,10 +49,27 @@ public class QuestManager : MonoBehaviour
     public QuestState GetState(QuestData q) =>
         q != null && states.TryGetValue(q.id, out var s) ? s : QuestState.NotStarted;
 
-    public int GetCount(string itemId) => items.TryGetValue(itemId, out var n) ? n : 0;
+    public QuestState GetState(string questId) =>
+        !string.IsNullOrEmpty(questId) && states.TryGetValue(questId, out var s) ? s : QuestState.NotStarted;
+
+    public int GetCount(string itemId) =>
+        !string.IsNullOrEmpty(itemId) && items.TryGetValue(itemId, out var n) ? n : 0;
+
+    /// <summary>How far along a quest is: items collected, or (for a quest made of other quests) how many of those are done.</summary>
+    public int GetProgress(QuestData q)
+    {
+        if (!q.NeedsOtherQuests) return GetCount(q.itemId);
+        int done = 0;
+        foreach (var id in q.requiredQuests)
+            if (GetState(id) == QuestState.Completed) done++;
+        return done;
+    }
+
+    /// <summary>What <see cref="GetProgress"/> has to reach before the quest can be handed in.</summary>
+    public int GetGoal(QuestData q) => q.NeedsOtherQuests ? q.requiredQuests.Length : q.requiredCount;
 
     public bool IsReadyToHandIn(QuestData q) =>
-        GetState(q) == QuestState.Active && GetCount(q.itemId) >= q.requiredCount;
+        GetState(q) == QuestState.Active && GetProgress(q) >= GetGoal(q);
 
     public void StartQuest(QuestData q)
     {
@@ -65,7 +82,7 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(QuestData q)
     {
         if (!IsReadyToHandIn(q)) return;
-        items[q.itemId] = GetCount(q.itemId) - q.requiredCount;
+        if (!q.NeedsOtherQuests) items[q.itemId] = GetCount(q.itemId) - q.requiredCount;
         states[q.id] = QuestState.Completed;
         activeQuests.Remove(q.id);
         RefreshHud();
@@ -96,12 +113,13 @@ public class QuestManager : MonoBehaviour
         sb.Clear();
         foreach (var q in activeQuests.Values)
         {
-            int have = Mathf.Min(GetCount(q.itemId), q.requiredCount);
+            int goal = GetGoal(q);
+            int have = Mathf.Min(GetProgress(q), goal);
             if (sb.Length > 0) sb.Append('\n');
-            if (have >= q.requiredCount)
+            if (have >= goal)
                 sb.Append($"<color=#99FF99>{q.title}: done - go back and tell them!</color>");
             else
-                sb.Append($"{q.title}: {have}/{q.requiredCount}");
+                sb.Append($"{q.title}: {have}/{goal}");
         }
         // Bump the HUD whenever its text changes (a book collected, a quest ready to hand in).
         string text = sb.ToString();

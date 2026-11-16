@@ -23,6 +23,12 @@ public class NPCInteractable : MonoBehaviour
     [Tooltip("Objects (e.g. collectable books) that start inactive and are enabled when this NPC's quest is accepted.")]
     [SerializeField] GameObject[] questObjects;
 
+    [Header("Locked until")]
+    [Tooltip("Id of a quest that must be started (or finished) before this NPC will talk, e.g. the Librarian's \"library_help\". Leave empty to be talkable from the start.")]
+    [SerializeField] string unlockedByQuest = "";
+    [Tooltip("Speech-bubble icon hidden while this NPC is locked. If empty, a child named 'ChatIcon' is used.")]
+    [SerializeField] GameObject talkIcon;
+
     [SerializeField] float interactRange = 2f;
     [SerializeField] string playerTag = "Player";
 
@@ -55,6 +61,19 @@ public class NPCInteractable : MonoBehaviour
 
     bool HasDialogue => dialogueAges5to8 != null || dialogueAges8to11 != null || dialogueAges12to15 != null;
 
+    // False until the quest named in 'unlockedByQuest' has been started. Once unlocked, stays unlocked.
+    bool unlocked;
+    bool Unlocked
+    {
+        get
+        {
+            if (!unlocked)
+                unlocked = string.IsNullOrEmpty(unlockedByQuest)
+                    || QuestManager.Instance.GetState(unlockedByQuest) != QuestState.NotStarted;
+            return unlocked;
+        }
+    }
+
     void Awake()
     {
         if (!HasDialogue)
@@ -62,12 +81,19 @@ public class NPCInteractable : MonoBehaviour
 
         baseScale = transform.localScale;
         if (dialogueCamera != null) dialogueCamera.SetActive(false);
+
+        if (talkIcon == null)
+        {
+            var icon = transform.Find("ChatIcon");
+            if (icon != null) talkIcon = icon.gameObject;
+        }
     }
 
     void Start()
     {
         var p = GameObject.FindGameObjectWithTag(playerTag);
         if (p != null) player = p.transform;
+        if (talkIcon != null) talkIcon.SetActive(Unlocked);
     }
 
     bool PlayerInRange =>
@@ -93,7 +119,11 @@ public class NPCInteractable : MonoBehaviour
                     1f - Mathf.Exp(-8f * Time.deltaTime));
         }
 
-        bool canTalk = !talking && HasDialogue && PlayerInRange;
+        // The speech bubble appears the moment this NPC becomes talkable.
+        bool open = Unlocked;
+        if (talkIcon != null && talkIcon.activeSelf != open) talkIcon.SetActive(open);
+
+        bool canTalk = !talking && open && HasDialogue && PlayerInRange;
         if (canTalk == reportedInRange) return;
         reportedInRange = canTalk;
         InteractionPrompt.Instance?.SetInRange(this, canTalk);
@@ -130,7 +160,7 @@ public class NPCInteractable : MonoBehaviour
     /// <summary>Starts the conversation. Called by the Talk prompt (E key or button).</summary>
     public void Interact()
     {
-        if (!talking && HasDialogue && PlayerInRange) BeginTalk();
+        if (!talking && Unlocked && HasDialogue && PlayerInRange) BeginTalk();
     }
 
     void BeginTalk()
