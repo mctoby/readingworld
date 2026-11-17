@@ -27,6 +27,7 @@ public class DailyContentGenerator : EditorWindow
 
     int day = 2;
     string topic = "";
+    int only;   // 0 = everyone, otherwise 1 + index into content.characters
     string apiKey = "";
     bool busy;
     string status = "";
@@ -71,10 +72,20 @@ public class DailyContentGenerator : EditorWindow
             }
             else EditorGUILayout.LabelField("API key", "Using ANTHROPIC_API_KEY");
 
-            bool exists = content.days.Any(d => d.day == day);
-            if (exists) EditorGUILayout.HelpBox($"Day {day} already exists. Generating will replace it.", MessageType.Warning);
+            var existing = content.days.FirstOrDefault(d => d.day == day);
+            var names = new[] { "Everyone" }.Concat(content.characters.Select(c => c.name)).ToArray();
+            only = Mathf.Clamp(EditorGUILayout.Popup(new GUIContent("Characters", "Regenerate one character and keep everyone else's lines for that day."), only, names), 0, names.Length - 1);
+            bool single = only > 0;
 
-            using (new EditorGUI.DisabledScope(string.IsNullOrWhiteSpace(topic) || string.IsNullOrEmpty(Key)))
+            if (existing == null && single)
+                EditorGUILayout.HelpBox($"Day {day} doesn't exist yet. Generate it for everyone first.", MessageType.Warning);
+            else if (existing != null)
+                EditorGUILayout.HelpBox(single
+                    ? $"Replaces {names[only]}'s lines on day {day} ({existing.topic}). Leave Topic empty to keep \"{existing.topic}\"."
+                    : $"Day {day} already exists. Generating will replace it.", MessageType.Warning);
+
+            bool hasTopic = !string.IsNullOrWhiteSpace(topic) || (single && existing != null);
+            using (new EditorGUI.DisabledScope(!hasTopic || string.IsNullOrEmpty(Key) || (single && existing == null)))
                 if (GUILayout.Button(busy ? "Generating..." : "Generate", GUILayout.Height(34)))
                     _ = Generate(content);
         }
@@ -122,8 +133,12 @@ public class DailyContentGenerator : EditorWindow
 
     async Task Generate(DailyContent content)
     {
-        if (content.days.Any(d => d.day == day) &&
-            !EditorUtility.DisplayDialog("Replace day?", $"Day {day} already exists. Replace its conversations?", "Replace", "Cancel"))
+        var existing = content.days.FirstOrDefault(d => d.day == day);
+        var target = only > 0 && only <= content.characters.Count ? content.characters[only - 1] : null;
+
+        if (existing != null && !EditorUtility.DisplayDialog("Replace?",
+                target != null ? $"Replace {target.name}'s conversations on day {day}?" : $"Day {day} already exists. Replace its conversations?",
+                "Replace", "Cancel"))
             return;
 
         var host = content.characters.FirstOrDefault(c => c.isHost);
@@ -137,21 +152,30 @@ public class DailyContentGenerator : EditorWindow
         busy = true;
         log.Clear();
         int genDay = day;
-        string genTopic = topic.Trim();
+        string genTopic = !string.IsNullOrWhiteSpace(topic) ? topic.Trim() : existing?.topic ?? "";
         try
         {
             string system = BuildSystemPrompt(content);
             var results = new Dictionary<string, Generated>();
 
-            // The host goes first so its request writes the prompt cache; the others then read it.
-            Log($"Writing {host.name}'s lines for day {genDay}...");
-            results[host.npcId] = await GenerateCharacter(system, UserPrompt(host, friends, genDay, genTopic), host.name);
+            if (target != null)
+            {
+                Log($"Writing {target.name}'s lines for day {genDay}...");
+                results[target.npcId] = await GenerateCharacter(system, UserPrompt(target, friends, genDay, genTopic), target.name);
+            }
+            else
+            {
+                // The host goes first so its request writes the prompt cache; the others then read it.
+                Log($"Writing {host.name}'s lines for day {genDay}...");
+                results[host.npcId] = await GenerateCharacter(system, UserPrompt(host, friends, genDay, genTopic), host.name);
 
-            Log($"Writing {string.Join(", ", friends.Select(f => f.name))}...");
-            var done = await Task.WhenAll(friends.Select(f => GenerateCharacter(system, UserPrompt(f, friends, genDay, genTopic), f.name)));
-            for (int i = 0; i < friends.Count; i++) results[friends[i].npcId] = done[i];
+                Log($"Writing {string.Join(", ", friends.Select(f => f.name))}...");
+                var done = await Task.WhenAll(friends.Select(f => GenerateCharacter(system, UserPrompt(f, friends, genDay, genTopic), f.name)));
+                for (int i = 0; i < friends.Count; i++) results[friends[i].npcId] = done[i];
+            }
 
             WriteDay(content, genDay, genTopic, host, friends, results);
+            CheckQuestObjects(content);
             Log($"Day {genDay} is ready. Read it through before you build: {DayFolder(genDay)}");
         }
         catch (Exception e)
@@ -292,6 +316,17 @@ Here are the characters:");
 ""afterLines"": one cheerful line for any later visit.
 ""questTitle"": a short title for today's goal shown in the quest list, e.g. ""Help {c.name}"".");
         }
+        else if (c.missionType == DailyContent.MissionType.Collect)
+        {
+            string items = c.itemCount == 1 ? $"one {c.itemId}" : $"{c.itemCount} {c.itemId}s";
+            sb.AppendLine($@"{c.name}'s mission today is a hunt around the camp, themed around the topic: {c.mission}
+The game places {items} in the world for the reader to find; they glitter and spin, so they are easy to spot. The conversation has no questions.
+""lines"": a greeting, then {c.name} explains, in a way that fits the topic, why {items} are lost somewhere around the camp, asks the reader to find them and bring them back, and says that this sends {c.rewardBooks} new books to the library.
+""inProgressLines"": 2 lines for when the reader comes back before finding them all, encouraging them to keep looking.
+""completeLines"": 2-3 lines when the reader brings all {items} back: {c.name} is thrilled and thanks them.
+""afterLines"": one line for a later visit.
+""questTitle"": a short title shown in the quest list, e.g. ""Find {c.name}'s {c.itemId}s"".");
+        }
         else
         {
             sb.AppendLine($@"{c.name}'s mission today, themed around the topic: {c.mission}
@@ -324,7 +359,14 @@ Here are the characters:");
         string hostQuest = $"day{d}_{host.npcId}";
         var friendQuests = friends.Select(f => $"day{d}_{f.npcId}").ToArray();
 
-        var entry = new DailyContent.Day { day = d, topic = dayTopic, live = true };
+        // Regenerating some characters keeps everyone else's files (and the day's topic and Live setting).
+        var old = content.days.FirstOrDefault(x => x.day == d);
+        var entry = new DailyContent.Day { day = d, topic = dayTopic, live = old?.live ?? true };
+        if (old != null && results.Count < content.characters.Count)
+        {
+            entry.topic = old.topic;
+            entry.npcs.AddRange(old.npcs.Where(n => !results.ContainsKey(n.npcId)));
+        }
         var paths = new List<(DailyContent.NpcFiles files, string[] paths)>();
         var newDefinitions = new Dictionary<string, string>();
         var highlighted = new HashSet<string>();
@@ -350,6 +392,14 @@ Here are the characters:");
                 };
                 if (c.isHost)
                     data.quest = new QuestData { id = hostQuest, title = g.questTitle, requiredQuests = friendQuests };
+                else if (c.missionType == DailyContent.MissionType.Collect)
+                {
+                    // Collect quest: the NPC's Quest Objects appear when it starts; hand in at the NPC.
+                    data.quest = new QuestData { id = $"day{d}_{c.npcId}", title = g.questTitle, itemId = c.itemId, requiredCount = c.itemCount, rewardBooks = c.rewardBooks };
+                    data.unlockedByQuest = hostQuest;
+                    foreach (var l in data.lines) l.choices = null;   // a hunt has no questions
+                    if (data.completeLines.Length == 0) log.Add($"Warning: {c.name} {Levels[i]} has no lines for handing in.");
+                }
                 else
                 {
                     data.quest = new QuestData { id = $"day{d}_{c.npcId}", title = g.questTitle, type = "quiz", rewardBooks = c.rewardBooks };
@@ -430,6 +480,28 @@ Here are the characters:");
         {
             string w = Regex.Replace(m.Groups[1].Value, "<[^>]+>", "").Trim().ToLowerInvariant();
             if (w.Any(char.IsLetter)) yield return w;
+        }
+    }
+
+    // A collect mission only works if the NPC in the scene has that many matching Collectables as Quest Objects.
+    void CheckQuestObjects(DailyContent content)
+    {
+        var npcs = FindObjectsByType<NPCInteractable>(FindObjectsInactive.Include);
+        foreach (var c in content.characters.Where(c => !c.isHost && c.missionType == DailyContent.MissionType.Collect))
+        {
+            var npc = npcs.FirstOrDefault(n => new SerializedObject(n).FindProperty("npcId").stringValue == c.npcId);
+            if (npc == null) { log.Add($"Note: {c.name} isn't in the open scene, so their {c.itemId}s weren't checked."); continue; }
+
+            var objects = new SerializedObject(npc).FindProperty("questObjects");
+            int matching = 0;
+            for (int i = 0; i < objects.arraySize; i++)
+            {
+                var go = objects.GetArrayElementAtIndex(i).objectReferenceValue as GameObject;
+                var item = go != null ? go.GetComponent<Collectable>() : null;
+                if (item != null && new SerializedObject(item).FindProperty("itemId").stringValue == c.itemId) matching++;
+            }
+            if (matching < c.itemCount)
+                log.Add($"Warning: {c.name} needs {c.itemCount} \"{c.itemId}\" Collectables in Quest Objects but has {matching}. The hunt can't be finished until you add more.");
         }
     }
 

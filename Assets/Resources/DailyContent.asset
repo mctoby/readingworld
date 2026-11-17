@@ -19,24 +19,36 @@ MonoBehaviour:
     personality: The kind, slightly flustered librarian. His library became so popular that everyone borrowed books and nobody brought them back, so his shelves keep emptying. He starts each day and is overjoyed when the shelves fill up again.
     mission: 
     rewardBooks: 3
+    missionType: 0
+    itemId: book
+    itemCount: 3
   - npcId: barnaby
     name: Old Barnaby
     isHost: 0
     personality: A gentle, forgetful old man who loves long meandering walks around the camp and is always losing things.
     mission: Three riddles about the topic. Each riddle is a multiple-choice question; Barnaby describes something and the reader picks what it is.
     rewardBooks: 3
+    missionType: 0
+    itemId: book
+    itemCount: 3
   - npcId: tilly
     name: Tilly
     isHost: 0
     personality: A cheerful, curious girl who collects stories and loves telling them.
     mission: Tell a short original story about the topic (3-4 lines), then ask four multiple-choice questions about what happened in it.
     rewardBooks: 4
+    missionType: 0
+    itemId: book
+    itemCount: 3
   - npcId: gus
     name: Gus
     isHost: 0
     personality: A friendly gardener who loves words as much as his vegetables.
     mission: Five sentences about the topic, each with one missing word. The reader picks the word that fills the gap.
     rewardBooks: 5
+    missionType: 0
+    itemId: book
+    itemCount: 3
   days:
   - day: 2
     topic: Dinosaurs
@@ -46,10 +58,6 @@ MonoBehaviour:
       ages5to8: {fileID: 4900000, guid: 27497cca3eaf346dea6abb7c224db790, type: 3}
       ages8to11: {fileID: 4900000, guid: af382c2301b3f47b493f5bb652375057, type: 3}
       ages12to15: {fileID: 4900000, guid: 3740aedf2404a4bd7af505d5e07c9c0a, type: 3}
-    - npcId: barnaby
-      ages5to8: {fileID: 4900000, guid: 67a06f347fb844dd48d57db08027919b, type: 3}
-      ages8to11: {fileID: 4900000, guid: ce4d6288f0f174f88aac388d5f451a6f, type: 3}
-      ages12to15: {fileID: 4900000, guid: 6df937f02bb9a41a09bd25d5295fabad, type: 3}
     - npcId: tilly
       ages5to8: {fileID: 4900000, guid: 4e4583ef7da654a68ae6b18192961a2e, type: 3}
       ages8to11: {fileID: 4900000, guid: 170c3230d5b8b41a983be69fa36fb7eb, type: 3}
@@ -58,6 +66,10 @@ MonoBehaviour:
       ages5to8: {fileID: 4900000, guid: 2290dbb53f52d45b48c7a7791aceb1b6, type: 3}
       ages8to11: {fileID: 4900000, guid: f6d93abb078d94f758ca159b946dea19, type: 3}
       ages12to15: {fileID: 4900000, guid: fb7c649c257114a66afc071eb4128a56, type: 3}
+    - npcId: barnaby
+      ages5to8: {fileID: 4900000, guid: 67a06f347fb844dd48d57db08027919b, type: 3}
+      ages8to11: {fileID: 4900000, guid: ce4d6288f0f174f88aac388d5f451a6f, type: 3}
+      ages12to15: {fileID: 4900000, guid: 6df937f02bb9a41a09bd25d5295fabad, type: 3}
   - day: 3
     topic: Space
     live: 1
@@ -66,10 +78,6 @@ MonoBehaviour:
       ages5to8: {fileID: 4900000, guid: b057381477b3b4566aadec3f4d248927, type: 3}
       ages8to11: {fileID: 4900000, guid: 907d64a50b85f46308008cb39e21b981, type: 3}
       ages12to15: {fileID: 4900000, guid: a5f56f4ca23404e479e470879b864161, type: 3}
-    - npcId: barnaby
-      ages5to8: {fileID: 4900000, guid: 37ef337c241cf42eaa9933b241e1ed9c, type: 3}
-      ages8to11: {fileID: 4900000, guid: 158ad42dd944b4f8e87d0c88352a4555, type: 3}
-      ages12to15: {fileID: 4900000, guid: 14e84b1714dbb492286cf03681f6e828, type: 3}
     - npcId: tilly
       ages5to8: {fileID: 4900000, guid: a359ab297db6a48a7afbc2b28f2c9a97, type: 3}
       ages8to11: {fileID: 4900000, guid: a1311647bc54c44a0982d30fe1fd29c5, type: 3}
@@ -78,4 +86,8 @@ MonoBehaviour:
       ages5to8: {fileID: 4900000, guid: d26497c33139d47bda737acb9f6665b3, type: 3}
       ages8to11: {fileID: 4900000, guid: 9b5eb4d6bc0fc49c6b9123b700809271, type: 3}
       ages12to15: {fileID: 4900000, guid: ce92f9c68988c47c98b252e04eecc3b8, type: 3}
+    - npcId: barnaby
+      ages5to8: {fileID: 4900000, guid: 37ef337c241cf42eaa9933b241e1ed9c, type: 3}
+      ages8to11: {fileID: 4900000, guid: 158ad42dd944b4f8e87d0c88352a4555, type: 3}
+      ages12to15: {fileID: 4900000, guid: 14e84b1714dbb492286cf03681f6e828, type: 3}
   editorPlayDay: 0

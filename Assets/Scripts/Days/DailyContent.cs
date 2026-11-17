@@ -23,7 +23,16 @@ public class DailyContent : ScriptableObject
         [TextArea(2, 5)] public string mission;
         [Tooltip("Books added to the library when this character's mission is done.")]
         public int rewardBooks = 3;
+
+        [Tooltip("Quiz: the mission is questions inside the conversation.\nCollect: the reader finds items in the world (the NPC's Quest Objects) and brings them back.")]
+        public MissionType missionType = MissionType.Quiz;
+        [Tooltip("Collect missions: the Item Id of the Collectables to find, e.g. \"book\".")]
+        public string itemId = "book";
+        [Tooltip("Collect missions: how many to find. Should match the number of Quest Objects on the NPC in the scene.")]
+        public int itemCount = 3;
     }
+
+    public enum MissionType { Quiz, Collect }
 
     [Serializable]
     public class NpcFiles
@@ -74,6 +83,24 @@ public class DailyContent : ScriptableObject
         return best;
     }
 
+    /// <summary>Every day that can be played, in order: day 1 (hand-written) and each live generated day.</summary>
+    public List<int> PlayableDays()
+    {
+        var list = new List<int> { 1 };
+        foreach (var d in days)
+            if (d.live && d.day >= 2 && !list.Contains(d.day)) list.Add(d.day);
+        list.Sort();
+        return list;
+    }
+
+    /// <summary>The topic of a generated day, or null.</summary>
+    public string TopicFor(int day)
+    {
+        foreach (var d in days)
+            if (d.day == day) return d.topic;
+        return null;
+    }
+
     /// <summary>The conversation files for this NPC today, or null to use the NPC's own (day 1) files.</summary>
     public static TextAsset[] FilesFor(string npcId)
     {
@@ -122,6 +149,17 @@ public static class GameDay
             int next = Completed + 1;
             return current = content != null ? content.LatestDayUpTo(next) : 1;
         }
+    }
+
+    /// <summary>Raised when the day being played is switched (by the start-of-day popup).</summary>
+    public static event Action Changed;
+
+    /// <summary>Plays 'day' this session instead. NPCs reload their conversations for it.</summary>
+    public static void Choose(int day)
+    {
+        if (day < 1 || day == Current) return;
+        current = day;
+        Changed?.Invoke();
     }
 
     /// <summary>Records that 'day' has been finished. Never moves progress backwards.</summary>

@@ -2,7 +2,7 @@
     "npcName": "Old Barnaby",
     "quest": {
         "id": "day3_barnaby",
-        "title": "Old Barnaby's space riddles",
+        "title": "Barnaby's space riddles",
         "itemId": "",
         "requiredCount": 0,
         "type": "quiz",
@@ -13,7 +13,7 @@
     "lines": [
         {
             "speaker": "Old Barnaby",
-            "text": "Hello again! It is me, Barnaby. Last night I looked at the <color=red>stars</color>.",
+            "text": "Hello again! It is me, Barnaby. I love to look at the <color=red>sky</color>.",
             "choices": [],
             "correctIndex": 0,
             "hint": "",
@@ -21,7 +21,7 @@
         },
         {
             "speaker": "Old Barnaby",
-            "text": "I made three <color=red>riddles</color> about space. Get them right, and three new books go to the library!",
+            "text": "I have three <color=red>riddles</color> about space. Get them right, and three new books go to the library!",
             "choices": [],
             "correctIndex": 0,
             "hint": "",
@@ -29,7 +29,7 @@
         },
         {
             "speaker": "Old Barnaby",
-            "text": "Now, where did I put them? Oh! They are in my hat.",
+            "text": "Last night I went for a walk. I looked up at the <color=red>stars</color>.",
             "choices": [],
             "correctIndex": 0,
             "hint": "",
@@ -37,43 +37,43 @@
         },
         {
             "speaker": "Old Barnaby",
-            "text": "Riddle 1: I am big and hot. I <color=red>shine</color> in the day. What am I?",
+            "text": "Riddle 1: I shine at night. Sometimes I am round. Sometimes I am thin. What am I?",
             "choices": [
-                "The sun",
                 "The moon",
-                "A cloud"
+                "A cloud",
+                "A tree"
             ],
             "correctIndex": 0,
-            "hint": "Not quite. What makes the day bright and warm?",
-            "correctText": "Yes! I am the sun."
+            "hint": "Not quite. What do you see shining in the sky at night?",
+            "correctText": "Yes! It is the moon."
         },
         {
             "speaker": "Old Barnaby",
-            "text": "Riddle 2: I come out at <color=red>night</color>. Sometimes I am round. Sometimes I am thin. What am I?",
+            "text": "Riddle 2: I am very hot and very bright. I make the day. What am I?",
             "choices": [
-                "A bird",
-                "The moon",
-                "The sun"
+                "A snowman",
+                "The sun",
+                "A bath"
             ],
             "correctIndex": 1,
-            "hint": "Not quite. What do you see in the sky at night?",
-            "correctText": "That is right! I am the moon."
+            "hint": "Not quite. What is hot and bright up in the sky?",
+            "correctText": "Well done! It is the sun."
         },
         {
             "speaker": "Old Barnaby",
-            "text": "Riddle 3: I have a pointy nose. I <color=red>zoom</color> up into space. What am I?",
+            "text": "Riddle 3: I am tall and fast. I zoom up into <color=red>space</color>. What am I?",
             "choices": [
                 "A bike",
                 "A boat",
                 "A rocket"
             ],
             "correctIndex": 2,
-            "hint": "Not quite. What can go up into space?",
-            "correctText": "Well done! I am a rocket."
+            "hint": "Not quite. What can fly all the way up into space?",
+            "correctText": "That is right! It is a rocket."
         },
         {
             "speaker": "Old Barnaby",
-            "text": "Three out of three! You are so <color=red>clever</color>. Three new books are going to the library!",
+            "text": "You got all three! Three new <color=red>books</color> are going to the library.",
             "choices": [],
             "correctIndex": 0,
             "hint": "",
@@ -85,7 +85,7 @@
     "afterLines": [
         {
             "speaker": "Old Barnaby",
-            "text": "Thank you for doing my riddles. Look up at the <color=red>sky</color> tonight!",
+            "text": "Look up at night. Can you see the <color=red>moon</color>?",
             "choices": [],
             "correctIndex": 0,
             "hint": "",

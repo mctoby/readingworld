@@ -23,7 +23,7 @@ public class NPCInteractable : MonoBehaviour
     [Tooltip("Inactive child Cinemachine camera, enabled while talking.")]
     [SerializeField] GameObject dialogueCamera;
 
-    [Tooltip("Objects (e.g. collectable books) that start inactive and are enabled when this NPC's quest is accepted.")]
+    [Tooltip("Objects (e.g. collectable books) hidden when the game starts and shown when this NPC's quest is accepted.")]
     [SerializeField] GameObject[] questObjects;
 
     [Header("Locked until")]
@@ -100,6 +100,10 @@ public class NPCInteractable : MonoBehaviour
         baseScale = transform.localScale;
         if (dialogueCamera != null) dialogueCamera.SetActive(false);
 
+        // Quest objects stay hidden until this NPC's quest is accepted (they can be left visible in the editor).
+        if (questObjects != null)
+            foreach (var o in questObjects) if (o != null) o.SetActive(false);
+
         if (talkIcon == null)
         {
             var icon = transform.Find("ChatIcon");
@@ -169,8 +173,18 @@ public class NPCInteractable : MonoBehaviour
         hop = null;
     }
 
+    void OnEnable() => GameDay.Changed += OnDayChanged;
+
+    // Another day was picked at the start: forget the old day's conversation and lock state.
+    void OnDayChanged()
+    {
+        System.Array.Clear(cache, 0, cache.Length);
+        unlocked = false;
+    }
+
     void OnDisable()
     {
+        GameDay.Changed -= OnDayChanged;
         if (reportedInRange) InteractionPrompt.Instance?.SetInRange(this, false);
         reportedInRange = false;
     }

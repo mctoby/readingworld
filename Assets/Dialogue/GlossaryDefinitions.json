@@ -37,6 +37,10 @@
             "definition": "The study of stars, planets and everything else in space."
         },
         {
+            "word": "astute",
+            "definition": "Astute means quick to notice details and reach sensible conclusions."
+        },
+        {
             "word": "atmosphere",
             "definition": "The atmosphere is the layer of air that surrounds a planet."
         },
@@ -125,6 +129,10 @@
             "definition": "Cheerful means happy and full of good spirits."
         },
         {
+            "word": "circuitous",
+            "definition": "Circuitous means taking a long, winding route rather than going straight there."
+        },
+        {
             "word": "clever",
             "definition": "Clever means good at thinking and working things out."
         },
@@ -169,8 +177,16 @@
             "definition": "To do with the whole universe; here it means enormous or huge."
         },
         {
+            "word": "cosmos",
+            "definition": "The cosmos is the whole universe, including everything in space."
+        },
+        {
             "word": "countless",
             "definition": "Countless means so many that they would be impossible to count."
+        },
+        {
+            "word": "crack",
+            "definition": "To crack means to break open with a little line or split."
         },
         {
             "word": "curved",
@@ -183,6 +199,10 @@
         {
             "word": "deduction",
             "definition": "Deduction is working out an answer by thinking carefully about the clues you have."
+        },
+        {
+            "word": "deductions",
+            "definition": "Deductions are answers you work out by thinking carefully about the clues."
         },
         {
             "word": "delighted",
@@ -225,6 +245,14 @@
             "definition": "Discovered means found something for the first time."
         },
         {
+            "word": "dispatched",
+            "definition": "Dispatched means sent off to a place for a particular purpose."
+        },
+        {
+            "word": "distinctive",
+            "definition": "Distinctive means special and easy to recognise because it is different from others."
+        },
+        {
             "word": "distorted",
             "definition": "Distorted means twisted out of shape so that it looks unclear or wrong."
         },
@@ -243,6 +271,10 @@
         {
             "word": "eggs",
             "definition": "Eggs are round shells that some baby animals hatch out of."
+        },
+        {
+            "word": "elliptical",
+            "definition": "Elliptical means shaped like a stretched-out circle, or oval."
         },
         {
             "word": "elusive",
@@ -273,8 +305,16 @@
             "definition": "An expert is someone who knows a great deal about a subject."
         },
         {
+            "word": "explorer",
+            "definition": "An explorer is someone who travels to new places to discover things."
+        },
+        {
             "word": "extinct",
             "definition": "Extinct means gone for ever, like dinosaurs, which no longer live anywhere."
+        },
+        {
+            "word": "extinction",
+            "definition": "Extinction is when a type of animal or plant no longer exists anywhere."
         },
         {
             "word": "faith",
@@ -337,6 +377,10 @@
             "definition": "A person who looks after a garden and grows plants."
         },
         {
+            "word": "glasses",
+            "definition": "Glasses are what some people wear on their faces to help them see."
+        },
+        {
             "word": "grandad",
             "definition": "Your grandad is the dad of your mum or dad."
         },
@@ -359,6 +403,10 @@
         {
             "word": "happy",
             "definition": "Feeling good and cheerful."
+        },
+        {
+            "word": "hardened",
+            "definition": "Hardened means became hard and stiff after being soft."
         },
         {
             "word": "hatchling",
@@ -509,8 +557,16 @@
             "definition": "Meticulous means very careful and paying close attention to every detail."
         },
         {
+            "word": "mineralised",
+            "definition": "Mineralised means slowly turned into stone-like material by minerals seeping in over time."
+        },
+        {
             "word": "minuscule",
             "definition": "Extremely small; tiny."
+        },
+        {
+            "word": "misplaced",
+            "definition": "Misplaced means put something somewhere and then forgot where it was."
         },
         {
             "word": "missing",
@@ -665,12 +721,20 @@
             "definition": "Recalibrated means carefully adjusted an instrument so it works accurately again."
         },
         {
+            "word": "reflecting",
+            "definition": "Reflecting light means bouncing it back, like a mirror does."
+        },
+        {
             "word": "reflects",
             "definition": "Something that reflects light bounces it back, like a mirror does."
         },
         {
             "word": "relative",
             "definition": "A relative is someone who belongs to the same family, even if they are only distantly related."
+        },
+        {
+            "word": "remarkable",
+            "definition": "Remarkable means so good or unusual that people notice it."
         },
         {
             "word": "repeating",
@@ -705,6 +769,10 @@
             "definition": "Riddles are puzzles that describe something in a clever way so you have to guess what it is."
         },
         {
+            "word": "rings",
+            "definition": "Rings are wide circles of ice and rock that go around some planets."
+        },
+        {
             "word": "roar",
             "definition": "To roar is to make a very loud, deep sound, like a lion or a dinosaur."
         },
@@ -729,8 +797,16 @@
             "definition": "Protected from harm or danger."
         },
         {
+            "word": "satellite",
+            "definition": "A satellite is an object that travels around a planet in space."
+        },
+        {
             "word": "scattered",
             "definition": "Spread out in lots of different places."
+        },
+        {
+            "word": "scientist",
+            "definition": "A scientist is a person who studies the world carefully to find out how it works."
         },
         {
             "word": "scientists",
@@ -753,6 +829,14 @@
             "definition": "To look for someone or something."
         },
         {
+            "word": "sensible",
+            "definition": "Sensible means wise and showing good thinking."
+        },
+        {
+            "word": "sharp",
+            "definition": "Something sharp has a thin, pointy edge that can cut."
+        },
+        {
             "word": "shine",
             "definition": "To shine means to give out bright light."
         },
@@ -767,6 +851,10 @@
         {
             "word": "soil",
             "definition": "The earth that plants grow in."
+        },
+        {
+            "word": "solar system",
+            "definition": "The solar system is the sun and all the planets and other objects that travel around it."
         },
         {
             "word": "soup",
@@ -805,8 +893,16 @@
             "definition": "To stomp is to walk with big, heavy, noisy steps."
         },
         {
+            "word": "stone",
+            "definition": "Stone is hard rock."
+        },
+        {
             "word": "stories",
             "definition": "Tales about people and events, real or made up."
+        },
+        {
+            "word": "stroll",
+            "definition": "A stroll is a slow, relaxed walk."
         },
         {
             "word": "suggest",
@@ -849,6 +945,10 @@
             "definition": "Very dangerous, especially when it doesn't look it."
         },
         {
+            "word": "tyrant",
+            "definition": "A tyrant is a ruler who is very powerful and bossy."
+        },
+        {
             "word": "vacuum",
             "definition": "A space with nothing in it at all, not even air."
         },
@@ -871,6 +971,10 @@
         {
             "word": "volumes",
             "definition": "Books, especially big books or books in a set."
+        },
+        {
+            "word": "walk",
+            "definition": "A walk is when you go somewhere on your feet, just for fun."
         },
         {
             "word": "wandering",
