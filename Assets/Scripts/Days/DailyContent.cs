@@ -52,7 +52,28 @@ public class DailyContent : ScriptableObject
         public string topic;
         [Tooltip("Untick to keep this day out of the game without deleting it.")]
         public bool live = true;
+        [Tooltip("Which scene this day is played in.")]
+        public TimeOfDay timeOfDay = TimeOfDay.Day;
         public List<NpcFiles> npcs = new();
+    }
+
+    public enum TimeOfDay { Day, Night }
+
+    [Header("Scenes")]
+    [Tooltip("Scene for daytime days. Must be in the build's scene list.")]
+    public string daySceneName = "SceneDay";
+    [Tooltip("Scene for night-time days. Must be in the build's scene list.")]
+    public string nightSceneName = "SceneNight";
+    [Tooltip("Time of day for day 1 (the hand-written day).")]
+    public TimeOfDay day1TimeOfDay = TimeOfDay.Day;
+
+    /// <summary>The scene that 'day' is played in.</summary>
+    public string SceneFor(int day)
+    {
+        var time = day1TimeOfDay;
+        foreach (var d in days)
+            if (d.day == day) time = d.timeOfDay;
+        return time == TimeOfDay.Night ? nightSceneName : daySceneName;
     }
 
     [Tooltip("Who the generator writes for, and what each of them does.")]
@@ -161,6 +182,9 @@ public static class GameDay
         current = day;
         Changed?.Invoke();
     }
+
+    /// <summary>Works the current day out again from saved progress next time it's asked (e.g. back at the main menu).</summary>
+    public static void Forget() => current = 0;
 
     /// <summary>Records that 'day' has been finished. Never moves progress backwards.</summary>
     public static void MarkComplete(int day)

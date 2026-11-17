@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f79decc866c4be2bb473388e9026c0, type: 3}
   m_Name: DailyContent
   m_EditorClassIdentifier: Assembly-CSharp::DailyContent
+  daySceneName: SceneDay
+  nightSceneName: SceneNight
+  day1TimeOfDay: 0
   characters:
   - npcId: librarian
     name: Mr. Page
@@ -53,6 +56,7 @@ MonoBehaviour:
   - day: 2
     topic: Dinosaurs
     live: 1
+    timeOfDay: 0
     npcs:
     - npcId: librarian
       ages5to8: {fileID: 4900000, guid: 27497cca3eaf346dea6abb7c224db790, type: 3}
@@ -73,6 +77,7 @@ MonoBehaviour:
   - day: 3
     topic: Space
     live: 1
+    timeOfDay: 1
     npcs:
     - npcId: librarian
       ages5to8: {fileID: 4900000, guid: b057381477b3b4566aadec3f4d248927, type: 3}

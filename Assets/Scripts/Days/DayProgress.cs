@@ -17,6 +17,9 @@ public class DayProgress : MonoBehaviour
     [SerializeField] TMP_Text titleText;
     [SerializeField] TMP_Text messageText;
     [SerializeField] Button closeButton;
+    [Tooltip("Optional: goes back to the main menu.")]
+    [SerializeField] Button menuButton;
+    [SerializeField] string menuSceneName = "MainMenu";
 
     [Tooltip("{0} is the day number.")]
     [SerializeField] string titleFormat = "Day {0} complete!";
@@ -33,6 +36,19 @@ public class DayProgress : MonoBehaviour
     {
         if (popup != null) popup.SetActive(false);
         if (closeButton != null) closeButton.onClick.AddListener(Close);
+        if (menuButton != null) menuButton.onClick.AddListener(GoToMenu);
+    }
+
+    /// <summary>Back to the main menu, which then offers the next day.</summary>
+    public void GoToMenu()
+    {
+        if (open)
+        {
+            open = false;
+            PlayerControlLock.Unlock();
+        }
+        GameDay.Forget();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(menuSceneName);
     }
 
     void OnEnable() => QuestManager.QuestCompleted += OnQuestCompleted;
