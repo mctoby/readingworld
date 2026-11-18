@@ -1,0 +1,178 @@
+@font-face { font-family: "Abalone Smile"; src: url("/game/fonts/AbaloneSmile.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Magical Story"; src: url("/game/fonts/MagicalStory.ttf") format("truetype"); font-display: block; }
+@font-face { font-family: "Matcha Style"; src: url("/game/fonts/MatchaStyle.ttf") format("truetype"); font-display: block; }
+
+:root {
+  --blue: #2680e6;
+  --cream: #fff7e6;
+  --ink: #26264c;
+  --ink-soft: #4c4c66;
+  --red: #d93025;
+  --dim: rgba(26, 31, 64, 0.75);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #5c9ed9;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+
+/* The UI is laid out on a Unity-style reference canvas (units = Unity canvas units) and scaled to fit. */
+#ui {
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  font-family: "Abalone Smile", system-ui, sans-serif;
+  color: var(--ink);
+}
+#ui > * { pointer-events: none; }
+#ui .interactive, #ui button, #ui .popup-dim { pointer-events: auto; }
+
+[hidden] { display: none !important; }
+
+/* ---- sprites */
+.skinned { position: relative; isolation: isolate; }
+.skinned > .bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---- buttons */
+.jb {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  touch-action: manipulation;
+}
+.jb .label { position: relative; pointer-events: none; line-height: 1; }
+.jb.off { cursor: default; }
+.jb.off .bg { filter: saturate(0.4) brightness(0.85); }
+
+/* ---- loading */
+#loading {
+  position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  background: #5c9ed9; color: #fff; font-family: "Abalone Smile", system-ui, sans-serif; font-size: 34px; z-index: 10;
+  transition: opacity 0.4s;
+}
+#loading.done { opacity: 0; pointer-events: none; }
+.loading-bar { width: min(60vw, 360px); height: 14px; border-radius: 7px; background: rgba(255, 255, 255, 0.3); overflow: hidden; }
+.loading-bar > div { height: 100%; width: 0; background: #fff; border-radius: 7px; transition: width 0.2s; }
+
+/* ---- generic popups (age menu, day start, day complete, glossary) */
+.popup-dim { position: absolute; inset: 0; background: var(--dim); }
+.window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  color: var(--ink);
+}
+.window .title { position: absolute; left: 0; right: 0; text-align: center; color: var(--ink); line-height: 1; }
+.window .message { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; font-family: "Magical Story", serif; color: var(--ink-soft); line-height: 1.15; }
+
+.sk { display: inline-block; }
+
+/* ---- main menu */
+.menu-title { position: absolute; left: 0; right: 0; top: 30px; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 96px; color: #fff; text-shadow: 0 6px 0 rgba(0, 0, 0, 0.12); }
+.agency { position: absolute; width: 1300px; left: 50%; margin-left: -1001px; top: calc(50% - 489px); font-size: 102px; font-weight: bold; color: #fff; text-align: center; line-height: 1; white-space: nowrap; }
+.age-grid { position: absolute; left: 60px; right: 60px; top: 230px; bottom: 40px; display: grid; grid-template-columns: repeat(6, 150px); grid-auto-rows: 150px; gap: 20px; justify-content: center; align-content: start; }
+.age-grid .jb .label { font-family: "Matcha Style", sans-serif; font-size: 72px; translate: 0 -7px; }
+
+.fullscreen-btn { position: absolute; right: calc(30px + env(safe-area-inset-right) / var(--s)); top: calc(30px + env(safe-area-inset-top) / var(--s)); width: 320px; height: 100px; font-size: 56px; }
+.iphone-tip { position: absolute; right: 30px; top: 145px; width: 620px; height: 170px; background: rgba(0, 0, 0, 0.78); color: #fff; font-size: 44px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px 20px; border-radius: 12px; }
+
+.blue-btn .label { font-size: 56px; color: #fff; }
+
+/* ---- quest HUD */
+.quest-hud { position: absolute; left: calc(30px + env(safe-area-inset-left) / var(--s)); top: calc(30px + env(safe-area-inset-top) / var(--s)); width: 281px; min-height: 342px; padding: 107px 24px 14px; transform-origin: 0 0; }
+.quest-hud .hud-title { position: absolute; left: 24px; top: 34px; font-family: system-ui, sans-serif; font-weight: bold; font-size: 40px; color: #fff; }
+.quest-hud .hud-text { font-family: system-ui, sans-serif; font-weight: bold; font-size: 22px; color: #000; line-height: 1.2; white-space: pre-line; }
+.quest-hud .hud-text .done { color: #2a8a2a; }
+
+/* ---- talk prompt */
+.talk-btn { position: absolute; right: calc(35px + env(safe-area-inset-right) / var(--s)); bottom: calc(35px + env(safe-area-inset-bottom) / var(--s)); width: 318px; height: 120px; transform-origin: 100% 100%; }
+.talk-btn .label { font-family: system-ui, sans-serif; font-weight: bold; font-size: 52px; }
+
+/* ---- dialogue */
+.dialogue {
+  position: absolute;
+  left: calc(10% + 600px);
+  right: calc(10% - 120px);
+  bottom: calc(40px + env(safe-area-inset-bottom) / var(--s));
+  min-height: 300px;
+  padding: 56px 80px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform-origin: 50% 100%;
+  cursor: pointer;
+}
+.dialogue .speaker { font-family: "Matcha Style", sans-serif; font-weight: bold; font-size: 100px; color: #ffd966; text-transform: uppercase; line-height: 0.95; white-space: nowrap; }
+.dialogue .body { font-family: "Magical Story", serif; font-size: 60px; color: #fff; line-height: 1.12; min-height: 64px; }
+.dialogue .body .hidden-char { visibility: hidden; }
+.dialogue .choices { display: flex; flex-direction: column; gap: 14px; }
+.dialogue .choice { height: 96px; width: 100%; justify-content: flex-start; padding: 0 28px; transform-origin: 50% 50%; }
+.dialogue .choice .label { font-family: "Matcha Style", sans-serif; font-size: 44px; color: #000; text-align: left; line-height: 1.05; }
+.dialogue .hint { font-size: 32px; color: rgba(0, 0, 0, 0.6); text-align: right; min-height: 43px; }
+.dialogue .hint.wrong { color: #ffb34d; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35); }
+
+/* ---- glossary */
+.words-btn { position: absolute; right: calc(30px + env(safe-area-inset-right) / var(--s)); top: calc(30px + env(safe-area-inset-top) / var(--s)); width: 320px; height: 110px; transform-origin: 100% 0; }
+.words-btn .label { font-size: 50px; }
+.new-word { position: absolute; left: 50%; top: calc(40px + env(safe-area-inset-top) / var(--s)); width: 820px; height: 120px; margin-left: -410px; display: flex; align-items: center; justify-content: center; font-size: 52px; color: var(--ink); transform-origin: 50% 0; }
+.new-word b { color: var(--red); font-weight: normal; }
+.glossary .window { width: 1300px; height: 860px; }
+.glossary .title { top: 25px; height: 110px; font-size: 80px; display: flex; align-items: center; justify-content: center; }
+.glossary .count { position: absolute; left: 0; right: 0; top: 135px; text-align: center; font-size: 38px; color: var(--ink-soft); }
+.glossary .close { position: absolute; right: 30px; top: 30px; width: 100px; height: 100px; }
+.glossary .close .label { font-size: 56px; }
+.glossary .list { position: absolute; left: 60px; right: 60px; top: 220px; bottom: 50px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; pointer-events: auto; touch-action: pan-y; padding-right: 8px; }
+.glossary .entry { padding: 18px 34px 22px; flex: none; }
+.glossary .entry .word { font-size: 54px; color: var(--red); line-height: 1.05; }
+.glossary .entry .def { font-family: "Magical Story", serif; font-size: 38px; color: var(--ink-soft); line-height: 1.15; }
+
+/* ---- day popups */
+.day-window { width: 1100px; height: 600px; }
+.day-window .title { top: 40px; height: 130px; font-size: 96px; display: flex; align-items: center; justify-content: center; }
+.day-window .message { left: 70px; right: 70px; top: 160px; bottom: 170px; font-size: 50px; }
+.day-window .play { position: absolute; left: 50%; bottom: 45px; width: 360px; height: 120px; margin-left: -180px; }
+.day-window .ok { position: absolute; left: 50%; bottom: 45px; width: 360px; height: 120px; margin-left: -380px; }
+.day-window .to-menu { position: absolute; left: 50%; bottom: 45px; width: 360px; height: 120px; margin-left: 20px; }
+.day-window .prev { position: absolute; left: 40px; top: 50%; width: 120px; height: 120px; margin-top: -60px; }
+.day-window .next { position: absolute; right: 40px; top: 50%; width: 120px; height: 120px; margin-top: -60px; }
+
+/* ---- touch controls */
+.stick { position: absolute; left: calc(50px + env(safe-area-inset-left) / var(--s)); bottom: calc(15px + env(safe-area-inset-bottom) / var(--s)); width: 380px; height: 415px; pointer-events: auto; touch-action: none; }
+.stick .handle { position: absolute; left: 50%; top: 50%; width: 160px; height: 160px; margin: -80px 0 0 -80px; pointer-events: none; }
+
+/* ---- age menu */
+.age-box { width: 1279px; height: 640px; }
+.age-box .title { top: 20px; height: 150px; font-size: 80px; display: flex; align-items: center; justify-content: center; }
+.age-box .subtitle { position: absolute; left: 0; right: 0; top: 150px; height: 60px; text-align: center; font-size: 42px; color: var(--ink-soft); }
+
+/* Full-screen layers (popups, screens). Pop-in animations transform these, so they must cover the screen. */
+.layer, .menu, .game-ui, .glossary { position: absolute; inset: 0; }

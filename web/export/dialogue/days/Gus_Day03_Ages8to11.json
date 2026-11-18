@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day3_gus",
+        "title": "Gus's space gaps",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Good evening! I'm Gus. I grow vegetables by day and gaze at the <color=red>planets</color> by night.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "I wrote a story about space, but five words floated right off the page! Fill each <color=red>gap</color> and five new books will land in the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nEarth travels all the way around the Sun once every <color=red>_____</color>.",
+            "choices": [
+                "hour",
+                "day",
+                "year"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. It is a very long journey. Which is the longest amount of time?",
+            "correctText": "Earth travels all the way around the Sun once every <color=red>year</color>."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nMars is called the Red Planet because it is covered in <color=red>_____</color> dust.",
+            "choices": [
+                "rusty",
+                "icy",
+                "green"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which word describes something reddish-brown?",
+            "correctText": "Mars is called the Red Planet because it is covered in <color=red>rusty</color> dust."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nThe Moon has no light of its own; it <color=red>_____</color> light from the Sun.",
+            "choices": [
+                "eats",
+                "reflects",
+                "hides"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. The Moon shines by bouncing sunlight back, like a mirror.",
+            "correctText": "The Moon has no light of its own; it <color=red>reflects</color> light from the Sun."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nJupiter is the <color=red>_____</color> planet in our whole solar system.",
+            "choices": [
+                "large",
+                "larger",
+                "largest"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. It is being compared with every other planet, not just one.",
+            "correctText": "Jupiter is the <color=red>largest</color> planet in our whole solar system."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nLast year, an astronaut <color=red>_____</color> on the space station for six months.",
+            "choices": [
+                "live",
+                "lived",
+                "living"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. 'Last year' tells you it happened in the past.",
+            "correctText": "Last year, an astronaut <color=red>lived</color> on the space station for six months."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Mission complete! Every word is back in <color=red>orbit</color>, and five new books are heading to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thanks again! On a clear night, see if you can spot a <color=red>constellation</color> twinkling above the camp.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

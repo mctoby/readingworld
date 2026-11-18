@@ -1,0 +1,87 @@
+{
+    "npcName": "Old Barnaby",
+    "quest": {
+        "id": "day2_barnaby",
+        "title": "Barnaby's dinosaur riddles",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 3,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Ah, you again, splendid! On my rather <color=red>circuitous</color> walk this morning, I stumbled upon an old notebook of dinosaur riddles.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Solve all three, and three new books will be <color=red>dispatched</color> to the library. I'd solve them myself, but I've forgotten the answers, naturally.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 1: My name means 'three-horned face', and I wore a broad, bony <color=red>frill</color> behind my head. What am I?",
+            "choices": [
+                "Velociraptor",
+                "Triceratops",
+                "Brachiosaurus"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Which name begins with a prefix meaning 'three'?",
+            "correctText": "Correct. 'Tri' means three, as in Triceratops."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 2: I am no creature at all, but the <color=red>mineralised</color> remains of one, preserved in rock for millions of years until someone patiently brushes me free. What am I?",
+            "choices": [
+                "A glacier",
+                "A meteorite",
+                "A fossil"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Which of these is the preserved remains of a living thing?",
+            "correctText": "Precisely. A fossil is the preserved trace of ancient life."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 3: I hurtled in from space some sixty-six million years ago, and many scientists believe my impact led to the <color=red>extinction</color> of the dinosaurs. What am I?",
+            "choices": [
+                "An asteroid",
+                "An earthquake",
+                "A flood"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which of these could arrive from space?",
+            "correctText": "Well reasoned. An asteroid, arriving from space."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Most <color=red>astute</color>, all three! Three new books are already on their way to the library, which is more than I can say for my spectacles.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "I've been mulling over a fourth riddle, but it seems to have become rather <color=red>extinct</color> in my memory.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

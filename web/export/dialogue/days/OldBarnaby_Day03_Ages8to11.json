@@ -1,0 +1,87 @@
+{
+    "npcName": "Old Barnaby",
+    "quest": {
+        "id": "day3_barnaby",
+        "title": "Barnaby's space riddles",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 3,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Hello again, my friend! Last night I went for a long walk under the <color=red>stars</color>, and I quite forgot to come home for supper!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "It got me thinking up three <color=red>riddles</color> about space. Solve them all and three new books will appear in the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 1: I travel around the Earth about once a month. I have no light of my own, but I glow by <color=red>reflecting</color> the sun's light. What am I?",
+            "choices": [
+                "A comet",
+                "The moon",
+                "A cloud"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. What goes around the Earth and lights up the night sky?",
+            "correctText": "Correct! It is the moon."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 2: I am a huge ball of burning gas at the centre of our <color=red>solar system</color>. Every planet travels around me. What am I?",
+            "choices": [
+                "The sun",
+                "Mars",
+                "The moon"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which one is hot enough to be made of burning gas?",
+            "correctText": "Yes! It is the sun."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 3: I am a planet famous for the beautiful <color=red>rings</color> of ice and rock around my middle. What am I?",
+            "choices": [
+                "Earth",
+                "Mercury",
+                "Saturn"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Which planet is best known for its rings?",
+            "correctText": "Exactly! It is Saturn."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Three out of three! You're a true space <color=red>explorer</color>. Three new books are on their way to the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "On a clear night, look up. If you're lucky, you might spot a <color=red>shooting star</color>. I'll be out there too, if I remember my coat!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

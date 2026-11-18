@@ -1,0 +1,1012 @@
+{
+    "definitions": [
+        {
+            "word": "accurately",
+            "definition": "Accurately means correctly and without mistakes."
+        },
+        {
+            "word": "adventure",
+            "definition": "An adventure is an exciting thing to do or a new experience."
+        },
+        {
+            "word": "ago",
+            "definition": "Ago means before now, in the past."
+        },
+        {
+            "word": "amazing",
+            "definition": "Amazing means really wonderful and surprising."
+        },
+        {
+            "word": "appropriate",
+            "definition": "Appropriate means suitable or fitting for the situation."
+        },
+        {
+            "word": "assistance",
+            "definition": "Help or support given to someone."
+        },
+        {
+            "word": "assisted",
+            "definition": "Assisted means helped."
+        },
+        {
+            "word": "astronomical",
+            "definition": "Astronomical means enormous, and it also describes anything to do with stars and space."
+        },
+        {
+            "word": "astronomy",
+            "definition": "The study of stars, planets and everything else in space."
+        },
+        {
+            "word": "astute",
+            "definition": "Astute means quick to notice details and reach sensible conclusions."
+        },
+        {
+            "word": "atmosphere",
+            "definition": "The atmosphere is the layer of air that surrounds a planet."
+        },
+        {
+            "word": "attentively",
+            "definition": "Attentively means while paying close and careful attention."
+        },
+        {
+            "word": "back",
+            "definition": "To the place where something was before."
+        },
+        {
+            "word": "bare",
+            "definition": "Empty, with nothing on it or covering it."
+        },
+        {
+            "word": "barren",
+            "definition": "Bare and empty, with nothing on it."
+        },
+        {
+            "word": "believe",
+            "definition": "To feel sure that something is true."
+        },
+        {
+            "word": "belong",
+            "definition": "Where something belongs is the right place for it to be."
+        },
+        {
+            "word": "bone",
+            "definition": "A bone is one of the hard parts inside an animal's body that hold it up."
+        },
+        {
+            "word": "bones",
+            "definition": "Bones are the hard parts inside an animal's body that hold it up."
+        },
+        {
+            "word": "books",
+            "definition": "Sets of printed pages joined together, full of stories or facts to read."
+        },
+        {
+            "word": "borrowed",
+            "definition": "Borrowed means taken for a while, with the promise of giving it back."
+        },
+        {
+            "word": "bright",
+            "definition": "Giving out lots of light, or very colourful."
+        },
+        {
+            "word": "brimming",
+            "definition": "Full right up to the top."
+        },
+        {
+            "word": "bulky",
+            "definition": "Bulky means big, thick and hard to move about in."
+        },
+        {
+            "word": "bursting",
+            "definition": "Bursting means so full that it can hardly hold any more."
+        },
+        {
+            "word": "busy",
+            "definition": "Full of people or things happening; having lots to do."
+        },
+        {
+            "word": "cabbages",
+            "definition": "Cabbages are big, round, leafy green vegetables."
+        },
+        {
+            "word": "call on",
+            "definition": "To call on someone is to go and visit them."
+        },
+        {
+            "word": "carefully",
+            "definition": "Carefully means paying close attention so that you don't miss anything."
+        },
+        {
+            "word": "cartographer",
+            "definition": "A person who draws and makes maps."
+        },
+        {
+            "word": "cave",
+            "definition": "A cave is a big hole in a hill or under the ground, often dark and bare inside."
+        },
+        {
+            "word": "cheerful",
+            "definition": "Cheerful means happy and full of good spirits."
+        },
+        {
+            "word": "circuitous",
+            "definition": "Circuitous means taking a long, winding route rather than going straight there."
+        },
+        {
+            "word": "clever",
+            "definition": "Clever means good at thinking and working things out."
+        },
+        {
+            "word": "collection",
+            "definition": "A group of things gathered together, like books or stamps."
+        },
+        {
+            "word": "colossal",
+            "definition": "Enormous; very, very big."
+        },
+        {
+            "word": "comet",
+            "definition": "A ball of ice and dust that zooms through space with a glowing tail."
+        },
+        {
+            "word": "composed",
+            "definition": "Composed means created or put together, such as a piece of writing or music."
+        },
+        {
+            "word": "consequently",
+            "definition": "As a result; because of that."
+        },
+        {
+            "word": "conspicuously",
+            "definition": "Conspicuously means in a way that is very easy to notice."
+        },
+        {
+            "word": "constellation",
+            "definition": "A constellation is a group of stars that seems to make a shape or picture in the sky."
+        },
+        {
+            "word": "constellations",
+            "definition": "Constellations are groups of stars that seem to make shapes or pictures in the sky."
+        },
+        {
+            "word": "content",
+            "definition": "Calm and happy with how things are."
+        },
+        {
+            "word": "cosmic",
+            "definition": "To do with the whole universe; here it means enormous or huge."
+        },
+        {
+            "word": "cosmos",
+            "definition": "The cosmos is the whole universe, including everything in space."
+        },
+        {
+            "word": "countless",
+            "definition": "Countless means so many that they would be impossible to count."
+        },
+        {
+            "word": "crack",
+            "definition": "To crack means to break open with a little line or split."
+        },
+        {
+            "word": "curved",
+            "definition": "Curved means bent in a smooth line, like part of a circle."
+        },
+        {
+            "word": "damp",
+            "definition": "A little bit wet."
+        },
+        {
+            "word": "deduction",
+            "definition": "Deduction is working out an answer by thinking carefully about the clues you have."
+        },
+        {
+            "word": "deductions",
+            "definition": "Deductions are answers you work out by thinking carefully about the clues."
+        },
+        {
+            "word": "delighted",
+            "definition": "Very pleased and happy."
+        },
+        {
+            "word": "delve",
+            "definition": "To delve into something is to explore it closely and find out more."
+        },
+        {
+            "word": "descent",
+            "definition": "A descent is a journey downwards, like a spacecraft coming in to land."
+        },
+        {
+            "word": "despite",
+            "definition": "Even though something else is true."
+        },
+        {
+            "word": "detective",
+            "definition": "A detective is someone who solves puzzles by looking carefully at clues."
+        },
+        {
+            "word": "diligently",
+            "definition": "Carefully and with lots of hard work."
+        },
+        {
+            "word": "dinosaur",
+            "definition": "A dinosaur is a kind of animal that lived a very, very long time ago."
+        },
+        {
+            "word": "dinosaurs",
+            "definition": "Dinosaurs were animals, many of them huge, that lived on Earth millions of years ago."
+        },
+        {
+            "word": "disarray",
+            "definition": "A messy, disorganised state where things are not as they should be."
+        },
+        {
+            "word": "discovered",
+            "definition": "Discovered means found something for the first time."
+        },
+        {
+            "word": "dispatched",
+            "definition": "Dispatched means sent off to a place for a particular purpose."
+        },
+        {
+            "word": "distinctive",
+            "definition": "Distinctive means special and easy to recognise because it is different from others."
+        },
+        {
+            "word": "distorted",
+            "definition": "Distorted means twisted out of shape so that it looks unclear or wrong."
+        },
+        {
+            "word": "dominated",
+            "definition": "Dominated means was the most powerful and widespread in a place."
+        },
+        {
+            "word": "earth",
+            "definition": "Earth is the planet where we all live."
+        },
+        {
+            "word": "egg",
+            "definition": "An egg is a round shell that a baby animal grows inside."
+        },
+        {
+            "word": "eggs",
+            "definition": "Eggs are round shells that some baby animals hatch out of."
+        },
+        {
+            "word": "elliptical",
+            "definition": "Elliptical means shaped like a stretched-out circle, or oval."
+        },
+        {
+            "word": "elusive",
+            "definition": "Elusive means hard to find or catch."
+        },
+        {
+            "word": "empty",
+            "definition": "With nothing inside."
+        },
+        {
+            "word": "enthusiastic",
+            "definition": "Very excited about and interested in something."
+        },
+        {
+            "word": "eternally",
+            "definition": "Forever; for all time."
+        },
+        {
+            "word": "exceptionally",
+            "definition": "Exceptionally means much more than usual."
+        },
+        {
+            "word": "exhilarating",
+            "definition": "Exhilarating means thrilling and full of excitement."
+        },
+        {
+            "word": "expert",
+            "definition": "An expert is someone who knows a great deal about a subject."
+        },
+        {
+            "word": "explorer",
+            "definition": "An explorer is someone who travels to new places to discover things."
+        },
+        {
+            "word": "extinct",
+            "definition": "Extinct means gone for ever, like dinosaurs, which no longer live anywhere."
+        },
+        {
+            "word": "extinction",
+            "definition": "Extinction is when a type of animal or plant no longer exists anywhere."
+        },
+        {
+            "word": "faith",
+            "definition": "Strong trust in someone or something."
+        },
+        {
+            "word": "fill",
+            "definition": "To fill a gap means to put something into the empty space."
+        },
+        {
+            "word": "find",
+            "definition": "To discover something you were looking for."
+        },
+        {
+            "word": "finished",
+            "definition": "Finished means you have done all of something and there is none left to do."
+        },
+        {
+            "word": "fossilised",
+            "definition": "Fossilised describes something that has slowly turned into stone over millions of years."
+        },
+        {
+            "word": "fossils",
+            "definition": "Fossils are the remains or shapes of ancient living things preserved in rock."
+        },
+        {
+            "word": "fox",
+            "definition": "A wild animal like a small dog, with orange fur and a bushy tail."
+        },
+        {
+            "word": "friend",
+            "definition": "A friend is someone you like and who likes you too."
+        },
+        {
+            "word": "frill",
+            "definition": "A frill is a wide, curved edge, like the bony shield around a Triceratops's neck."
+        },
+        {
+            "word": "frozen",
+            "definition": "Frozen means turned hard and icy because it is so cold."
+        },
+        {
+            "word": "full",
+            "definition": "With no room left for anything more."
+        },
+        {
+            "word": "galaxy",
+            "definition": "A galaxy is an enormous group of millions of stars and planets."
+        },
+        {
+            "word": "gap",
+            "definition": "A gap is an empty space where something is missing."
+        },
+        {
+            "word": "gaps",
+            "definition": "Empty spaces between things."
+        },
+        {
+            "word": "gardener",
+            "definition": "A person who looks after a garden and grows plants."
+        },
+        {
+            "word": "glasses",
+            "definition": "Glasses are what some people wear on their faces to help them see."
+        },
+        {
+            "word": "grandad",
+            "definition": "Your grandad is the dad of your mum or dad."
+        },
+        {
+            "word": "grateful",
+            "definition": "Feeling thankful for something someone did."
+        },
+        {
+            "word": "gravity",
+            "definition": "Gravity is the invisible pull that draws objects towards each other, like planets towards the sun."
+        },
+        {
+            "word": "grow",
+            "definition": "To get bigger over time."
+        },
+        {
+            "word": "happier",
+            "definition": "Feeling more happy than before."
+        },
+        {
+            "word": "happy",
+            "definition": "Feeling good and cheerful."
+        },
+        {
+            "word": "hardened",
+            "definition": "Hardened means became hard and stiff after being soft."
+        },
+        {
+            "word": "hatchling",
+            "definition": "A hatchling is a baby animal that has just come out of its egg."
+        },
+        {
+            "word": "helmet",
+            "definition": "A helmet is a strong hat that keeps your head safe."
+        },
+        {
+            "word": "help",
+            "definition": "Help means doing something useful to make things easier for someone."
+        },
+        {
+            "word": "herbivore",
+            "definition": "A herbivore is an animal that eats only plants."
+        },
+        {
+            "word": "herbivores",
+            "definition": "Herbivores are animals that eat only plants."
+        },
+        {
+            "word": "hill",
+            "definition": "A raised piece of land, smaller than a mountain."
+        },
+        {
+            "word": "home",
+            "definition": "The place where someone or something belongs."
+        },
+        {
+            "word": "hope",
+            "definition": "To want something to happen and believe it might."
+        },
+        {
+            "word": "horns",
+            "definition": "Horns are hard, pointed parts that grow on some animals' heads."
+        },
+        {
+            "word": "house",
+            "definition": "A house is a building that people live in."
+        },
+        {
+            "word": "humans",
+            "definition": "Humans are people, like you and me."
+        },
+        {
+            "word": "hurried",
+            "definition": "Moved or did something quickly."
+        },
+        {
+            "word": "hypothesis",
+            "definition": "A hypothesis is an idea that someone suggests to explain something, which can then be tested."
+        },
+        {
+            "word": "illustrated",
+            "definition": "Illustrated means filled with pictures or drawings that help explain the words."
+        },
+        {
+            "word": "impressive",
+            "definition": "Impressive means so good that people notice and admire it."
+        },
+        {
+            "word": "ingenuity",
+            "definition": "Ingenuity is the clever, inventive way someone solves a problem."
+        },
+        {
+            "word": "intact",
+            "definition": "Intact means whole and undamaged, with nothing missing."
+        },
+        {
+            "word": "invited",
+            "definition": "Asked to come somewhere or join in."
+        },
+        {
+            "word": "jubilant",
+            "definition": "Jubilant means full of joy, especially because something has gone well."
+        },
+        {
+            "word": "jupiter",
+            "definition": "Jupiter is the biggest planet in our solar system."
+        },
+        {
+            "word": "kindred",
+            "definition": "Alike in some way, as if part of the same family."
+        },
+        {
+            "word": "landed",
+            "definition": "Came down and arrived safely, like a spaceship touching the ground."
+        },
+        {
+            "word": "larger",
+            "definition": "Bigger than something else."
+        },
+        {
+            "word": "largest",
+            "definition": "Largest means the biggest of all."
+        },
+        {
+            "word": "launched",
+            "definition": "Launched means sent up into the air or into space."
+        },
+        {
+            "word": "librarian",
+            "definition": "A person who looks after a library and helps people find books."
+        },
+        {
+            "word": "library",
+            "definition": "A place full of books that people can borrow and read."
+        },
+        {
+            "word": "lighthouse",
+            "definition": "A tall tower with a bright light that guides ships at night."
+        },
+        {
+            "word": "lived",
+            "definition": "Lived means stayed and made a home somewhere in the past."
+        },
+        {
+            "word": "lonely",
+            "definition": "Here, lonely means looking empty, with nothing else around."
+        },
+        {
+            "word": "lost",
+            "definition": "Gone, and you don't know where it is."
+        },
+        {
+            "word": "lumbering",
+            "definition": "Lumbering means moving slowly and heavily, in a clumsy way."
+        },
+        {
+            "word": "luminous",
+            "definition": "Luminous means glowing or giving off light."
+        },
+        {
+            "word": "me",
+            "definition": "The word you use when you talk about yourself."
+        },
+        {
+            "word": "meandering",
+            "definition": "Wandering slowly with lots of twists and turns."
+        },
+        {
+            "word": "meteor",
+            "definition": "A meteor is a small piece of rock flying very fast through space."
+        },
+        {
+            "word": "meticulous",
+            "definition": "Meticulous means very careful and paying close attention to every detail."
+        },
+        {
+            "word": "mineralised",
+            "definition": "Mineralised means slowly turned into stone-like material by minerals seeping in over time."
+        },
+        {
+            "word": "minuscule",
+            "definition": "Extremely small; tiny."
+        },
+        {
+            "word": "misplaced",
+            "definition": "Misplaced means put something somewhere and then forgot where it was."
+        },
+        {
+            "word": "missing",
+            "definition": "Not where it should be; lost."
+        },
+        {
+            "word": "mission",
+            "definition": "An important task or job that someone has been given to do."
+        },
+        {
+            "word": "monumental",
+            "definition": "Monumental means very large or important, like a huge achievement."
+        },
+        {
+            "word": "moon",
+            "definition": "The big round thing that shines in the sky at night."
+        },
+        {
+            "word": "neck",
+            "definition": "The neck is the part of the body that joins the head to the rest of the body."
+        },
+        {
+            "word": "nicely",
+            "definition": "Nicely means in a good or pleasing way."
+        },
+        {
+            "word": "night",
+            "definition": "Night is the dark time when the sun has gone down."
+        },
+        {
+            "word": "night sky",
+            "definition": "The night sky is the dark sky you see after sunset, full of stars and the moon."
+        },
+        {
+            "word": "observation",
+            "definition": "Watching something carefully to learn about it."
+        },
+        {
+            "word": "orbit",
+            "definition": "An orbit is the curved path something follows as it travels around a planet or star."
+        },
+        {
+            "word": "orbiting",
+            "definition": "Orbiting means travelling around a planet or star in a curved path, again and again."
+        },
+        {
+            "word": "outer space",
+            "definition": "The dark, mostly empty area far beyond Earth's sky."
+        },
+        {
+            "word": "over the moon",
+            "definition": "A saying that means extremely happy."
+        },
+        {
+            "word": "packed",
+            "definition": "So full that there is hardly any room left."
+        },
+        {
+            "word": "palaeontologist",
+            "definition": "A palaeontologist is a scientist who studies fossils to learn about ancient life."
+        },
+        {
+            "word": "palaeontology",
+            "definition": "Palaeontology is the science of studying fossils to learn about ancient life, such as dinosaurs."
+        },
+        {
+            "word": "patterns",
+            "definition": "Shapes or events that repeat in a regular way."
+        },
+        {
+            "word": "perseverance",
+            "definition": "Keeping going even when something is hard."
+        },
+        {
+            "word": "persevere",
+            "definition": "To keep trying even when something is difficult."
+        },
+        {
+            "word": "planet",
+            "definition": "A planet is a huge round world that travels around a star, like Earth or Mars."
+        },
+        {
+            "word": "planets",
+            "definition": "Planets are huge round worlds that travel around a star, like Earth does around the Sun."
+        },
+        {
+            "word": "pond",
+            "definition": "A small area of still water."
+        },
+        {
+            "word": "pondering",
+            "definition": "Pondering means thinking about something slowly and carefully."
+        },
+        {
+            "word": "popular",
+            "definition": "Liked by lots of people."
+        },
+        {
+            "word": "popularity",
+            "definition": "Being liked or enjoyed by lots of people."
+        },
+        {
+            "word": "precision",
+            "definition": "Being exact and very careful."
+        },
+        {
+            "word": "predator",
+            "definition": "A predator is an animal that hunts other animals for food."
+        },
+        {
+            "word": "predicament",
+            "definition": "A difficult or tricky situation."
+        },
+        {
+            "word": "prehistoric",
+            "definition": "Prehistoric means from the very distant past, before people wrote anything down."
+        },
+        {
+            "word": "problem",
+            "definition": "Something that is wrong and needs fixing."
+        },
+        {
+            "word": "propagate",
+            "definition": "To propagate means to spread or travel from one place to another."
+        },
+        {
+            "word": "pumpkin",
+            "definition": "A big round orange vegetable that grows on a vine."
+        },
+        {
+            "word": "push",
+            "definition": "To move something away from you using your hands or body."
+        },
+        {
+            "word": "questions",
+            "definition": "Questions are things you ask when you want to find out an answer."
+        },
+        {
+            "word": "re-entry",
+            "definition": "The moment a spacecraft comes back into Earth's air; here it means the books returning home."
+        },
+        {
+            "word": "read",
+            "definition": "To read is to look at words and understand what they say."
+        },
+        {
+            "word": "reader",
+            "definition": "A person who reads."
+        },
+        {
+            "word": "recalibrated",
+            "definition": "Recalibrated means carefully adjusted an instrument so it works accurately again."
+        },
+        {
+            "word": "reflecting",
+            "definition": "Reflecting light means bouncing it back, like a mirror does."
+        },
+        {
+            "word": "reflects",
+            "definition": "Something that reflects light bounces it back, like a mirror does."
+        },
+        {
+            "word": "relative",
+            "definition": "A relative is someone who belongs to the same family, even if they are only distantly related."
+        },
+        {
+            "word": "remarkable",
+            "definition": "Remarkable means so good or unusual that people notice it."
+        },
+        {
+            "word": "repeating",
+            "definition": "Repeating means happening again in the same way as before."
+        },
+        {
+            "word": "replenished",
+            "definition": "Replenished means filled up again after being empty."
+        },
+        {
+            "word": "report",
+            "definition": "To come back and tell someone what has happened."
+        },
+        {
+            "word": "restored",
+            "definition": "Put back to how it was before."
+        },
+        {
+            "word": "retrieve",
+            "definition": "To go and get something back."
+        },
+        {
+            "word": "return",
+            "definition": "To give or bring something back."
+        },
+        {
+            "word": "returned",
+            "definition": "Gave or brought something back."
+        },
+        {
+            "word": "riddles",
+            "definition": "Riddles are puzzles that describe something in a clever way so you have to guess what it is."
+        },
+        {
+            "word": "rings",
+            "definition": "Rings are wide circles of ice and rock that go around some planets."
+        },
+        {
+            "word": "roar",
+            "definition": "To roar is to make a very loud, deep sound, like a lion or a dinosaur."
+        },
+        {
+            "word": "rock",
+            "definition": "A rock is a hard piece of stone."
+        },
+        {
+            "word": "rocket",
+            "definition": "A rocket is a machine that flies very fast up into space."
+        },
+        {
+            "word": "round",
+            "definition": "Something round is shaped like a ball or a circle."
+        },
+        {
+            "word": "rusty",
+            "definition": "Rusty means a reddish-brown colour, like old metal that has been left out in the rain."
+        },
+        {
+            "word": "safe",
+            "definition": "Protected from harm or danger."
+        },
+        {
+            "word": "satellite",
+            "definition": "A satellite is an object that travels around a planet in space."
+        },
+        {
+            "word": "scattered",
+            "definition": "Spread out in lots of different places."
+        },
+        {
+            "word": "scientist",
+            "definition": "A scientist is a person who studies the world carefully to find out how it works."
+        },
+        {
+            "word": "scientists",
+            "definition": "Scientists are people who study the world carefully to find out how things work."
+        },
+        {
+            "word": "search",
+            "definition": "To look carefully for something."
+        },
+        {
+            "word": "searching",
+            "definition": "Looking carefully for something."
+        },
+        {
+            "word": "see",
+            "definition": "To notice something with your eyes."
+        },
+        {
+            "word": "seek",
+            "definition": "To look for someone or something."
+        },
+        {
+            "word": "sensible",
+            "definition": "Sensible means wise and showing good thinking."
+        },
+        {
+            "word": "sharp",
+            "definition": "Something sharp has a thin, pointy edge that can cut."
+        },
+        {
+            "word": "shine",
+            "definition": "To shine means to give out bright light."
+        },
+        {
+            "word": "shooting star",
+            "definition": "A shooting star is a streak of light made when a tiny bit of space rock burns up in the sky."
+        },
+        {
+            "word": "sky",
+            "definition": "The sky is the space above you where you see the sun, moon and stars."
+        },
+        {
+            "word": "soil",
+            "definition": "The earth that plants grow in."
+        },
+        {
+            "word": "solar system",
+            "definition": "The solar system is the sun and all the planets and other objects that travel around it."
+        },
+        {
+            "word": "soup",
+            "definition": "A hot, runny food made by cooking vegetables or meat in water."
+        },
+        {
+            "word": "space",
+            "definition": "Space is the huge area far above the sky, where the stars and planets are."
+        },
+        {
+            "word": "sparse",
+            "definition": "Thinly spread out, with lots of empty space."
+        },
+        {
+            "word": "star",
+            "definition": "A star is a huge ball of hot, glowing gas in space, like our sun."
+        },
+        {
+            "word": "stargaze",
+            "definition": "To stargaze means to spend time looking up at the stars and planets."
+        },
+        {
+            "word": "stargazing",
+            "definition": "Stargazing is spending time looking up at the stars and studying the night sky."
+        },
+        {
+            "word": "stars",
+            "definition": "Stars are the tiny bright lights you see in the sky at night."
+        },
+        {
+            "word": "stellar",
+            "definition": "Stellar means excellent, and it also means to do with the stars."
+        },
+        {
+            "word": "stomp",
+            "definition": "To stomp is to walk with big, heavy, noisy steps."
+        },
+        {
+            "word": "stone",
+            "definition": "Stone is hard rock."
+        },
+        {
+            "word": "stories",
+            "definition": "Tales about people and events, real or made up."
+        },
+        {
+            "word": "stroll",
+            "definition": "A stroll is a slow, relaxed walk."
+        },
+        {
+            "word": "suggest",
+            "definition": "To suggest here means to give evidence that something is likely to be true."
+        },
+        {
+            "word": "tail",
+            "definition": "A tail is the long part at the back of an animal's body."
+        },
+        {
+            "word": "talk",
+            "definition": "To say words out loud to someone."
+        },
+        {
+            "word": "teeth",
+            "definition": "Teeth are the hard white parts in a mouth used for biting and chewing."
+        },
+        {
+            "word": "tell",
+            "definition": "To say something to someone so they know it."
+        },
+        {
+            "word": "thank you",
+            "definition": "What you say to show you are grateful."
+        },
+        {
+            "word": "thrilled",
+            "definition": "Thrilled means very happy and excited."
+        },
+        {
+            "word": "thundering",
+            "definition": "Thundering means moving with a loud, rumbling noise, like thunder."
+        },
+        {
+            "word": "trackway",
+            "definition": "A trackway is a long line of footprints left by animals as they walked."
+        },
+        {
+            "word": "treacherous",
+            "definition": "Very dangerous, especially when it doesn't look it."
+        },
+        {
+            "word": "tyrant",
+            "definition": "A tyrant is a ruler who is very powerful and bossy."
+        },
+        {
+            "word": "vacuum",
+            "definition": "A space with nothing in it at all, not even air."
+        },
+        {
+            "word": "vanish",
+            "definition": "To disappear suddenly."
+        },
+        {
+            "word": "vanished",
+            "definition": "Disappeared suddenly."
+        },
+        {
+            "word": "visit",
+            "definition": "To visit someone is to go and see them."
+        },
+        {
+            "word": "void",
+            "definition": "The void is a huge, empty space, here meaning the emptiness of outer space."
+        },
+        {
+            "word": "volumes",
+            "definition": "Books, especially big books or books in a set."
+        },
+        {
+            "word": "walk",
+            "definition": "A walk is when you go somewhere on your feet, just for fun."
+        },
+        {
+            "word": "wandering",
+            "definition": "Walking slowly with no special place to go."
+        },
+        {
+            "word": "warm",
+            "definition": "Warm means a little bit hot, in a nice, cosy way."
+        },
+        {
+            "word": "weightlessness",
+            "definition": "Weightlessness is the feeling of having no weight, so you float instead of staying on the floor."
+        },
+        {
+            "word": "well done",
+            "definition": "What you say to praise someone who did something good."
+        },
+        {
+            "word": "words",
+            "definition": "Groups of letters that mean something when you read or say them."
+        },
+        {
+            "word": "year",
+            "definition": "A year is the time it takes Earth to travel once around the Sun, about 365 days."
+        },
+        {
+            "word": "yet",
+            "definition": "Yet is a linking word that means 'but' and shows something surprising."
+        },
+        {
+            "word": "zoom",
+            "definition": "To zoom means to move very fast."
+        }
+    ]
+}

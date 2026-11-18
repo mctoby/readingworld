@@ -1,0 +1,43 @@
+{
+  "npcName": "Gus",
+  "quest": {
+    "id": "missing_words",
+    "title": "Gus's missing words",
+    "type": "quiz",
+    "rewardBooks": 5
+  },
+  "lines": [
+    { "speaker": "Gus", "text": "Hello! I am Gus. I am a <color=red>gardener</color>." },
+    { "speaker": "Gus", "text": "Oh no! I lost some <color=red>words</color> from my story about a pumpkin. Can you put them back?" },
+    { "speaker": "Gus", "text": "Pick the word that fits each gap. Fill all five gaps and the library gets five new books!" },
+    {
+      "speaker": "Gus", "text": "Missing word 1:\nI plant a tiny seed in the <color=red>_____</color>.",
+      "choices": [ "soil", "sky", "sea" ], "correctIndex": 0,
+      "hint": "Not quite. Read the sentence again. Where do seeds go?", "correctText": "I plant a tiny seed in the <color=red>soil</color>."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 2:\nRain falls, and the seed starts to <color=red>_____</color>.",
+      "choices": [ "fly", "grow", "sing" ], "correctIndex": 1,
+      "hint": "Not quite. What do seeds do?", "correctText": "Rain falls, and the seed starts to <color=red>grow</color>."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 3:\nThe sun is warm and <color=red>_____</color>.",
+      "choices": [ "loud", "sad", "bright" ], "correctIndex": 2,
+      "hint": "Not quite. How does the sun look?", "correctText": "The sun is warm and <color=red>bright</color>."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 4:\nSoon, a big orange <color=red>_____</color> sits in my garden.",
+      "choices": [ "pumpkin", "boat", "bird" ], "correctIndex": 0,
+      "hint": "Not quite. What grows from a seed and is big and orange?", "correctText": "Soon, a big orange <color=red>pumpkin</color> sits in my garden."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 5:\nI cut it up and make a yummy <color=red>_____</color>.",
+      "choices": [ "hat", "soup", "road" ], "correctIndex": 1,
+      "hint": "Not quite. What can you eat?", "correctText": "I cut it up and make a yummy <color=red>soup</color>."
+    },
+    { "speaker": "Gus", "text": "You found all five <color=red>words</color>! Thank you. Five new books are going to the library!" }
+  ],
+  "afterLines": [
+    { "speaker": "Gus", "text": "Thank you for helping with my story. Go and see the new <color=red>books</color>!" }
+  ]
+}

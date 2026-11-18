@@ -1,0 +1,121 @@
+{
+    "npcName": "Mr. Page",
+    "quest": {
+        "id": "day2_librarian",
+        "title": "Restore the dinosaur section",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "",
+        "rewardBooks": 0,
+        "requiredQuests": [
+            "day2_barnaby",
+            "day2_tilly",
+            "day2_gus"
+        ]
+    },
+    "unlockedByQuest": "",
+    "lines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Good morning, and welcome back! It seems history has a habit of <color=red>repeating</color> itself.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Last night I gave a short talk on <color=red>palaeontology</color>, the study of ancient life, and the camp has been dinosaur-obsessed ever since.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "By dawn, every volume in the dinosaur section had been borrowed, and the borrowers have proved remarkably <color=red>elusive</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "All that remains is a layer of dust, which feels rather <color=red>appropriate</color> for creatures that vanished sixty-six million years ago.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Barnaby, Tilly and Gus each need a little help today. Would you be kind enough to <color=red>call on</color> them?",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Lend them a hand, and I suspect my books will find their way home, hopefully faster than a <color=red>lumbering</color> Brachiosaurus.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The dinosaur section remains <color=red>conspicuously</color> empty, I'm sorry to say.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Do carry on with Barnaby, Tilly and Gus, and return once all three have been <color=red>assisted</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "completeLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "Extraordinary! The dinosaur section has been completely <color=red>replenished</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "You helped every one of my friends, and I'm positively <color=red>jubilant</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Mr. Page",
+            "text": "Thank you, sincerely. Your help has been nothing short of <color=red>monumental</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "afterLines": [
+        {
+            "speaker": "Mr. Page",
+            "text": "The shelves are full of dinosaurs once more. Feel free to <color=red>delve</color> into them whenever you wish.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

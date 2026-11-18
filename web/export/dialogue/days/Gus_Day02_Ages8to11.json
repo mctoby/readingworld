@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day2_gus",
+        "title": "Gus's dinosaur words",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Hello again! Gus here. I've been digging in my vegetable patch and thinking about <color=red>dinosaurs</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "I wrote five sentences about them, but I've muddled up some words. Choose the right word for each gap, and five new <color=red>books</color> will go to the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nDinosaurs lived millions of years ago, long before any <color=red>_____</color> existed.",
+            "choices": [
+                "water",
+                "humans",
+                "sunshine"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Which of these arrived on Earth much, much later than the dinosaurs?",
+            "correctText": "Dinosaurs lived millions of years ago, long before any <color=red>humans</color> existed."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nBrachiosaurus had an extremely long <color=red>_____</color>, so it could reach leaves high in the trees.",
+            "choices": [
+                "neck",
+                "nose",
+                "ear"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which body part would help it stretch up to the treetops?",
+            "correctText": "Brachiosaurus had an extremely long <color=red>neck</color>, so it could reach leaves high in the trees."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nTriceratops had three sharp <color=red>_____</color> on its head to protect itself.",
+            "choices": [
+                "hats",
+                "eyes",
+                "horns"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. What sharp, pointy things could protect an animal?",
+            "correctText": "Triceratops had three sharp <color=red>horns</color> on its head to protect itself."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nTyrannosaurus rex was one of the <color=red>_____</color> meat-eaters that ever lived.",
+            "choices": [
+                "large",
+                "larger",
+                "largest"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. 'One of the' compares it with every meat-eater that ever lived.",
+            "correctText": "Tyrannosaurus rex was one of the <color=red>largest</color> meat-eaters that ever lived."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nLast year, scientists <color=red>_____</color> a new dinosaur skeleton in the desert.",
+            "choices": [
+                "discover",
+                "discovered",
+                "discovering"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. 'Last year' tells you this happened in the past.",
+            "correctText": "Last year, scientists <color=red>discovered</color> a new dinosaur skeleton in the desert."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Brilliant, every gap is filled! Five new books are on their way to the <color=red>library</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thanks again! Did you know lots of dinosaurs were <color=red>herbivores</color>? They'd have adored my lettuces.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

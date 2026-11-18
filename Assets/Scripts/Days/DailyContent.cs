@@ -59,22 +59,29 @@ public class DailyContent : ScriptableObject
 
     public enum TimeOfDay { Day, Night }
 
-    [Header("Scenes")]
-    [Tooltip("Scene for daytime days. Must be in the build's scene list.")]
-    public string daySceneName = "SceneDay";
-    [Tooltip("Scene for night-time days. Must be in the build's scene list.")]
-    public string nightSceneName = "SceneNight";
+    [Header("Scenes (all must be in the build's scene list)")]
+    [Tooltip("NPCs, player, cameras, UI: everything the game needs to run.")]
+    public string coreScene = "Core";
+    [Tooltip("The world's scenery, shared by day and night.")]
+    public string environmentScene = "Environment";
+    [Tooltip("Sun, sky, volume, probes and music for daytime days.")]
+    public string dayLightingScene = "Lighting_Day";
+    [Tooltip("Moon, sky, volume, probes and music for night-time days.")]
+    public string nightLightingScene = "Lighting_Night";
     [Tooltip("Time of day for day 1 (the hand-written day).")]
     public TimeOfDay day1TimeOfDay = TimeOfDay.Day;
 
-    /// <summary>The scene that 'day' is played in.</summary>
-    public string SceneFor(int day)
+    public TimeOfDay TimeOfDayFor(int day)
     {
         var time = day1TimeOfDay;
         foreach (var d in days)
             if (d.day == day) time = d.timeOfDay;
-        return time == TimeOfDay.Night ? nightSceneName : daySceneName;
+        return time;
     }
+
+    /// <summary>The lighting scene that 'day' is played with.</summary>
+    public string LightingSceneFor(int day) =>
+        TimeOfDayFor(day) == TimeOfDay.Night ? nightLightingScene : dayLightingScene;
 
     [Tooltip("Who the generator writes for, and what each of them does.")]
     public List<Character> characters = new();

@@ -1,0 +1,111 @@
+{
+    "npcName": "Gus",
+    "quest": {
+        "id": "day3_gus",
+        "title": "Gus's cosmic gaps",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 5,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Gus",
+            "text": "Ah, welcome back! I've swapped my trowel for a telescope tonight; the sky is <color=red>exceptionally</color> clear.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "I've drafted a short piece on astronomy, but five words have drifted off into the <color=red>void</color>. Restore them, and five new books will touch down in the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 1:\nWith no air to carry its vibrations, sound cannot <color=red>_____</color> through the vacuum of space.",
+            "choices": [
+                "evaporate",
+                "propagate",
+                "illuminate"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. You need a word meaning 'spread' or 'travel'.",
+            "correctText": "With no air to carry its vibrations, sound cannot <color=red>propagate</color> through the vacuum of space."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 2:\nMercury is the closest planet to the Sun, <color=red>_____</color> Venus is actually the hottest, thanks to its thick, heat-trapping atmosphere.",
+            "choices": [
+                "so",
+                "because",
+                "yet"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. You might expect the closest planet to be hottest, but it isn't. Which word signals that surprise?",
+            "correctText": "Mercury is the closest planet to the Sun, <color=red>yet</color> Venus is actually the hottest, thanks to its thick, heat-trapping atmosphere."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 3:\nSaturn's rings are not solid; they are composed of <color=red>_____</color> chunks of ice and rock.",
+            "choices": [
+                "countless",
+                "solitary",
+                "molten"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Rings made of many separate pieces need a word meaning 'a huge number'.",
+            "correctText": "Saturn's rings are not solid; they are composed of <color=red>countless</color> chunks of ice and rock."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 4:\nAboard the space station, astronauts experience near <color=red>_____</color>, so they must strap themselves in to sleep.",
+            "choices": [
+                "exhaustion",
+                "darkness",
+                "weightlessness"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Why would someone need straps to stop them drifting away?",
+            "correctText": "Aboard the space station, astronauts experience near <color=red>weightlessness</color>, so they must strap themselves in to sleep."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Missing word 5:\nThe first footprints on the Moon remain <color=red>_____</color>, since there is no wind or rain to erase them.",
+            "choices": [
+                "temporary",
+                "intact",
+                "invisible"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. If nothing erases them, what state are they still in?",
+            "correctText": "The first footprints on the Moon remain <color=red>intact</color>, since there is no wind or rain to erase them."
+        },
+        {
+            "speaker": "Gus",
+            "text": "Superb. My essay is complete, and five new volumes are making their <color=red>descent</color> towards the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Gus",
+            "text": "Thank you again. Do look in on the library, then return one clear night and we'll <color=red>stargaze</color> together.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

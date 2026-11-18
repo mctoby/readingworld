@@ -1,0 +1,95 @@
+{
+    "npcName": "Old Barnaby",
+    "quest": {
+        "id": "day2_barnaby",
+        "title": "Barnaby's dinosaur riddles",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 3,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day2_librarian",
+    "lines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Hello again! Barnaby here. On my <color=red>stroll</color> this morning, I found a little book all about dinosaurs.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "It's full of <color=red>riddles</color>! Solve three of them and three new books will appear in the library.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Let me see... ah yes, I copied them onto the back of my hand. How <color=red>sensible</color> of me!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 1: I was pressed into soft mud long ago, and now I have <color=red>hardened</color> into rock. I show exactly where a dinosaur once walked. What am I?",
+            "choices": [
+                "A feather",
+                "A footprint",
+                "A nest"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. What would a dinosaur leave behind when it walked through mud?",
+            "correctText": "Correct! A footprint shows where a dinosaur walked."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 2: I am a <color=red>scientist</color> who digs up dinosaur bones and studies them with brushes and tiny tools. What am I?",
+            "choices": [
+                "A pilot",
+                "A chef",
+                "A palaeontologist"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Which person would dig up bones and study them?",
+            "correctText": "Yes! A palaeontologist studies dinosaur bones."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Riddle 3: My name means '<color=red>tyrant</color> lizard king'. I had huge, sharp teeth but surprisingly tiny arms. What am I?",
+            "choices": [
+                "Tyrannosaurus rex",
+                "Triceratops",
+                "Stegosaurus"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Which name sounds a bit like 'tyrant'?",
+            "correctText": "Exactly! Tyrannosaurus rex, the tyrant lizard king."
+        },
+        {
+            "speaker": "Old Barnaby",
+            "text": "Three for three! You're a <color=red>remarkable</color> riddle-solver. Three new books are heading to the library right now.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Old Barnaby",
+            "text": "Thanks again for solving my riddles. I'd tell you another, but I seem to have <color=red>misplaced</color> it!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

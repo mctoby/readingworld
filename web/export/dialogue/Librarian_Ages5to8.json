@@ -1,0 +1,28 @@
+{
+  "npcName": "Mr. Page",
+  "quest": {
+    "id": "library_help",
+    "title": "Help Mr. Page fill the library",
+    "requiredQuests": ["lost_books", "story_quiz", "missing_words"]
+  },
+  "lines": [
+    { "speaker": "Mr. Page", "text": "Hello! I am Mr. Page. This is my <color=red>library</color>." },
+    { "speaker": "Mr. Page", "text": "Everyone loves my books. It is too <color=red>busy</color> here!" },
+    { "speaker": "Mr. Page", "text": "They all took books home. But no one came <color=red>back</color>!" },
+    { "speaker": "Mr. Page", "text": "Now my shelves are <color=red>empty</color>. Oh dear!" },
+    { "speaker": "Mr. Page", "text": "Barnaby, Tilly and Gus can help. Go and <color=red>talk</color> to them." },
+    { "speaker": "Mr. Page", "text": "Help all three, and my books will come <color=red>home</color>!" }
+  ],
+  "inProgressLines": [
+    { "speaker": "Mr. Page", "text": "My shelves still have <color=red>gaps</color>." },
+    { "speaker": "Mr. Page", "text": "Go and help Barnaby, Tilly and Gus. Then come back to <color=red>me</color>!" }
+  ],
+  "completeLines": [
+    { "speaker": "Mr. Page", "text": "Look! My shelves are <color=red>full</color> again!" },
+    { "speaker": "Mr. Page", "text": "You helped all my friends. I am so <color=red>happy</color>!" },
+    { "speaker": "Mr. Page", "text": "<color=red>Thank you</color>! You are a real book hero." }
+  ],
+  "afterLines": [
+    { "speaker": "Mr. Page", "text": "My library is full of <color=red>books</color> again. I am so happy. Come and read any time!" }
+  ]
+}

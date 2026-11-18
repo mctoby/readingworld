@@ -1,0 +1,131 @@
+{
+    "npcName": "Tilly",
+    "quest": {
+        "id": "day3_tilly",
+        "title": "Tilly's space quiz",
+        "itemId": "",
+        "requiredCount": 0,
+        "type": "quiz",
+        "rewardBooks": 4,
+        "requiredQuests": []
+    },
+    "unlockedByQuest": "day3_librarian",
+    "lines": [
+        {
+            "speaker": "Tilly",
+            "text": "Hello again! Tilly here, and today's story is out of this world. It's all about <color=red>space</color>!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Read carefully, then answer four <color=red>questions</color>. Get them all right and four new books will zoom into the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Captain Rosa and her robot, Bolt, were flying their spaceship to the <color=red>planet</color> Mars to collect red dust for scientists back on Earth.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Halfway there, a warning light flashed. A tiny <color=red>meteor</color> had knocked the ship's antenna loose, so they could no longer send messages home.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Bolt floated outside in his magnetic boots and fixed the antenna with a roll of extra-strong tape. Rosa called it the bravest repair in the <color=red>galaxy</color>.",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "They reached Mars, filled three jars with dust and sent a <color=red>cheerful</color> message home: \"Mission complete, and Bolt deserves a medal!\"",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 1: Why were Rosa and Bolt flying to Mars?",
+            "choices": [
+                "To collect red dust for scientists",
+                "To visit a friend",
+                "To find a lost robot"
+            ],
+            "correctIndex": 0,
+            "hint": "Not quite. Look back at the first part of the story!",
+            "correctText": "Correct! They were collecting red dust for scientists."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 2: What knocked the antenna loose?",
+            "choices": [
+                "A flock of birds",
+                "A tiny meteor",
+                "A strong wind"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Remember, they were out in space!",
+            "correctText": "Yes! A tiny meteor hit the ship."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 3: How did Bolt fix the antenna?",
+            "choices": [
+                "With a hammer",
+                "With glue",
+                "With extra-strong tape"
+            ],
+            "correctIndex": 2,
+            "hint": "Not quite. Think about what Bolt took outside.",
+            "correctText": "Right! A roll of extra-strong tape did the job."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Question 4: How many jars of dust did they fill?",
+            "choices": [
+                "Two",
+                "Three",
+                "Five"
+            ],
+            "correctIndex": 1,
+            "hint": "Not quite. Check the last part of the story.",
+            "correctText": "Exactly! They filled three jars."
+        },
+        {
+            "speaker": "Tilly",
+            "text": "Brilliant, four out of four! Your reading is truly <color=red>stellar</color>. Four new books are heading to the library!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ],
+    "inProgressLines": [],
+    "completeLines": [],
+    "afterLines": [
+        {
+            "speaker": "Tilly",
+            "text": "Thanks for joining my space adventure. The library is filling up <color=red>nicely</color>, so go and take a look!",
+            "choices": [],
+            "correctIndex": 0,
+            "hint": "",
+            "correctText": ""
+        }
+    ]
+}

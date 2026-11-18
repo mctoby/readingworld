@@ -1,0 +1,43 @@
+{
+  "npcName": "Gus",
+  "quest": {
+    "id": "missing_words",
+    "title": "Gus's missing words",
+    "type": "quiz",
+    "rewardBooks": 5
+  },
+  "lines": [
+    { "speaker": "Gus", "text": "Ah, a <color=red>kindred</color> spirit! I'm Gus. I tend the gardens, and, on occasion, the English language." },
+    { "speaker": "Gus", "text": "I was drafting an account of my prize pumpkin when a gust of wind carried five <color=red>words</color> clean off the page." },
+    { "speaker": "Gus", "text": "Choose the word that best completes each sentence. Restore all five, and five new books will appear in the library." },
+    {
+      "speaker": "Gus", "text": "Missing word 1:\nThe seed was so <color=red>_____</color> that I nearly lost it between my fingers.",
+      "choices": [ "enormous", "minuscule", "fragrant" ], "correctIndex": 1,
+      "hint": "Not quite. What kind of seed could be lost between your fingers?", "correctText": "The seed was so <color=red>minuscule</color> that I nearly lost it between my fingers."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 2:\nIt rained for a week; <color=red>_____</color>, the soil was perfectly soft by Friday.",
+      "choices": [ "however", "otherwise", "consequently" ], "correctIndex": 2,
+      "hint": "Not quite. The second part is a result of the first. Which word links cause and effect?", "correctText": "It rained for a week; <color=red>consequently</color>, the soil was perfectly soft by Friday."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 3:\nI tended the shoot <color=red>_____</color>, watering it each dawn and shielding it from frost.",
+      "choices": [ "carelessly", "diligently", "reluctantly" ], "correctIndex": 1,
+      "hint": "Not quite. Think about what watering it every dawn says about his effort.", "correctText": "I tended the shoot <color=red>diligently</color>, watering it each dawn and shielding it from frost."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 4:\nBy midsummer the pumpkin was <color=red>_____</color>, easily the largest the village had ever seen.",
+      "choices": [ "delicate", "ordinary", "colossal" ], "correctIndex": 2,
+      "hint": "Not quite. The clue is in the second half of the sentence.", "correctText": "By midsummer the pumpkin was <color=red>colossal</color>, easily the largest the village had ever seen."
+    },
+    {
+      "speaker": "Gus", "text": "Missing word 5:\n<color=red>_____</color> my modest expectations, it won first prize at the harvest fair.",
+      "choices": [ "Despite", "Because of", "Along with" ], "correctIndex": 0,
+      "hint": "Not quite. His expectations were modest, yet it won. Which word shows that contrast?", "correctText": "<color=red>Despite</color> my modest expectations, it won first prize at the harvest fair."
+    },
+    { "speaker": "Gus", "text": "Impeccable. My account is whole again, and five new <color=red>volumes</color> are making their way to the library." }
+  ],
+  "afterLines": [
+    { "speaker": "Gus", "text": "Thank you once more. Do look in on the library, I suspect it's finally beginning to look the part." }
+  ]
+}

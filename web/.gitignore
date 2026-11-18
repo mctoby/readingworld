@@ -1,0 +1,4 @@
+node_modules
+dist
+# Built from export/ by scripts/build-assets.mjs
+public/game

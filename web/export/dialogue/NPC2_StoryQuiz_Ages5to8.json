@@ -1,0 +1,41 @@
+{
+  "npcName": "Tilly",
+  "quest": {
+    "id": "story_quiz",
+    "title": "Tilly's story quiz",
+    "type": "quiz",
+    "rewardBooks": 4
+  },
+  "lines": [
+    { "speaker": "Tilly", "text": "Hello! I am Tilly. I love <color=red>stories</color>." },
+    { "speaker": "Tilly", "text": "Listen to my story. Then I will ask you four questions. Get them right and I will give the library four new <color=red>books</color>!" },
+    { "speaker": "Tilly", "text": "Pip is a little <color=red>fox</color>. Pip has a red hat." },
+    { "speaker": "Tilly", "text": "One night, Pip sees a big, bright <color=red>moon</color>. \"I want the moon!\" says Pip." },
+    { "speaker": "Tilly", "text": "Pip climbs a tall <color=red>hill</color>. But the moon is still far away." },
+    { "speaker": "Tilly", "text": "Then Pip sees the moon in a <color=red>pond</color>. Pip smiles and goes home." },
+    {
+      "speaker": "Tilly", "text": "Question 1: What is Pip?",
+      "choices": [ "A fox", "A cat", "A frog" ], "correctIndex": 0,
+      "hint": "Not quite. Think about the start of the story!", "correctText": "Yes! Pip is a fox."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 2: What does Pip want?",
+      "choices": [ "A cake", "The moon", "A hat" ], "correctIndex": 1,
+      "hint": "Not quite. Think about what Pip says!", "correctText": "That is right! Pip wants the moon."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 3: What does Pip climb?",
+      "choices": [ "A tree", "A house", "A hill" ], "correctIndex": 2,
+      "hint": "Not quite. Try again!", "correctText": "Well done! A tall hill."
+    },
+    {
+      "speaker": "Tilly", "text": "Question 4: Where does Pip see the moon at the end?",
+      "choices": [ "In a pond", "In a box", "In a hat" ], "correctIndex": 0,
+      "hint": "Not quite. Think about the end of the story!", "correctText": "Yes! The moon is in the pond."
+    },
+    { "speaker": "Tilly", "text": "Four out of four! You are a super <color=red>reader</color>. The library has four new books!" }
+  ],
+  "afterLines": [
+    { "speaker": "Tilly", "text": "Thank you for listening to my story. Go and see the new <color=red>books</color> in the library!" }
+  ]
+}

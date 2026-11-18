@@ -1,0 +1,26 @@
+{
+  "name": "reading-world",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "assets": "node scripts/build-assets.mjs",
+    "dev": "node scripts/build-assets.mjs --if-stale && vite",
+    "build": "node scripts/build-assets.mjs --if-stale && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "three": "^0.187.0",
+    "three-mesh-bvh": "^0.9.18"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "@types/three": "^0.187.0",
+    "meshoptimizer": "^1.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8"
+  }
+}

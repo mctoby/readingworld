@@ -35,7 +35,7 @@ public class DayStartPopup : MonoBehaviour
     [SerializeField] bool onlyReachedDays = false;
     [Tooltip("Show the popup even when there is only one day to play.")]
     [SerializeField] bool showWhenOnlyOneDay = true;
-    [Tooltip("Main menu: Play loads the chosen day's scene (day or night, set per day in Resources/DailyContent).\nOff: the day is switched in the scene that's already open.")]
+    [Tooltip("Main menu: Play loads the world with the chosen day's lighting (day or night, set per day in Resources/DailyContent).\nOff: the day is switched in the scene that's already open.")]
     [SerializeField] bool loadScene = false;
 
     readonly List<int> days = new();
@@ -106,9 +106,7 @@ public class DayStartPopup : MonoBehaviour
         if (loadScene)
         {
             PlayerControlLock.Unlock();
-            var content = DailyContent.Instance;
-            string scene = content != null ? content.SceneFor(days[index]) : "SceneDay";
-            UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+            WorldLoader.Load(days[index]);
             return;
         }
 
